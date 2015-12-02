@@ -5,7 +5,7 @@ English Readme<br>
 3.usage:add framework to your project. In your project setting  General ->Embedded Binaries add this framework<br>
 4.any problem please feel free to email to erduhai@qq.com<br>
 <br>
-中文介绍<br>
+便携式蓝牙小票打印机sdk中文介绍<br>
 为了方便广大ios应用开发者使用蓝牙打印功能，特发布此sdk。<br>
 支持iphone4s及更新设备，支持ipad2以上的设备，支持便携式蓝牙小票打印机，标签打印机<br>
 <br>
