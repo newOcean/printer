@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */; };
+		E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */; };
+		E1B62D481BE4746C00E00E2C /* PgyUpdate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B62D471BE4746C00E00E2C /* PgyUpdate.framework */; };
+		E1F478F71BA7030B00702420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F61BA7030B00702420 /* main.m */; };
+		E1F478FA1BA7030B00702420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F91BA7030B00702420 /* AppDelegate.m */; };
+		E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F478FB1BA7030B00702420 /* PrinterDemo.xcdatamodeld */; };
+		E1F479001BA7030B00702420 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478FF1BA7030B00702420 /* ViewController.m */; };
+		E1F479031BA7030B00702420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F479011BA7030B00702420 /* Main.storyboard */; };
+		E1F479051BA7030B00702420 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F479041BA7030B00702420 /* Images.xcassets */; };
+		E1F479081BA7030B00702420 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F479061BA7030B00702420 /* LaunchScreen.xib */; };
+		E1F479141BA7030B00702420 /* PrinterDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F479131BA7030B00702420 /* PrinterDemoTests.m */; };
+		E1F9ABCC1BA95779001BCB0D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */; };
+		E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F9ABCB1BA95779001BCB0D /* SVProgressHUD.m */; };
+		E1FE89081C0E7F420093C458 /* PrinterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FE89071C0E7F420093C458 /* PrinterSDK.framework */; };
+		E1FE89091C0E7F540093C458 /* PrinterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FE89071C0E7F420093C458 /* PrinterSDK.framework */; };
+		E1FE890A1C0E7F540093C458 /* PrinterSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1FE89071C0E7F420093C458 /* PrinterSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1F4790E1BA7030B00702420 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F478E91BA7030B00702420 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1F478F01BA7030B00702420;
+			remoteInfo = PrinterDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1D7F4211BA9A92800461CD2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1FE890A1C0E7F540093C458 /* PrinterSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPrinterDemoViewController.h; sourceTree = "<group>"; };
+		E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPrinterDemoViewController.m; sourceTree = "<group>"; };
+		E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJPrinterDemoViewController.xib; sourceTree = "<group>"; };
+		E1B62D471BE4746C00E00E2C /* PgyUpdate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PgyUpdate.framework; sourceTree = "<group>"; };
+		E1F478F11BA7030B00702420 /* PrinterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F478F51BA7030B00702420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F478F61BA7030B00702420 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1F478F81BA7030B00702420 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1F478F91BA7030B00702420 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1F478FC1BA7030B00702420 /* PrinterDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrinterDemo.xcdatamodel; sourceTree = "<group>"; };
+		E1F478FE1BA7030B00702420 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E1F478FF1BA7030B00702420 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1F479021BA7030B00702420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1F479041BA7030B00702420 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E1F479071BA7030B00702420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E1F4790D1BA7030B00702420 /* PrinterDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrinterDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F479121BA7030B00702420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F479131BA7030B00702420 /* PrinterDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterDemoTests.m; sourceTree = "<group>"; };
+		E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E1F9ABCA1BA95779001BCB0D /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		E1F9ABCB1BA95779001BCB0D /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		E1FE89071C0E7F420093C458 /* PrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PrinterSDK.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1F478EE1BA7030B00702420 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1FE89091C0E7F540093C458 /* PrinterSDK.framework in Frameworks */,
+				E1FE89081C0E7F420093C458 /* PrinterSDK.framework in Frameworks */,
+				E1B62D481BE4746C00E00E2C /* PgyUpdate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F4790A1BA7030B00702420 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1B62D441BE4746C00E00E2C /* PgyUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				E1B62D451BE4746C00E00E2C /* PgySDK */,
+			);
+			path = PgyUpdate;
+			sourceTree = "<group>";
+		};
+		E1B62D451BE4746C00E00E2C /* PgySDK */ = {
+			isa = PBXGroup;
+			children = (
+				E1B62D461BE4746C00E00E2C /* sdk */,
+			);
+			path = PgySDK;
+			sourceTree = "<group>";
+		};
+		E1B62D461BE4746C00E00E2C /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				E1B62D471BE4746C00E00E2C /* PgyUpdate.framework */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		E1F478E81BA7030B00702420 = {
+			isa = PBXGroup;
+			children = (
+				E1F478F31BA7030B00702420 /* PrinterDemo */,
+				E1F479101BA7030B00702420 /* PrinterDemoTests */,
+				E1F478F21BA7030B00702420 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1F478F21BA7030B00702420 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1F478F11BA7030B00702420 /* PrinterDemo.app */,
+				E1F4790D1BA7030B00702420 /* PrinterDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1F478F31BA7030B00702420 /* PrinterDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E1FE89071C0E7F420093C458 /* PrinterSDK.framework */,
+				E1B62D441BE4746C00E00E2C /* PgyUpdate */,
+				E1F9ABC81BA95779001BCB0D /* SVProgressHD */,
+				E1F478F81BA7030B00702420 /* AppDelegate.h */,
+				E1F478F91BA7030B00702420 /* AppDelegate.m */,
+				E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */,
+				E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */,
+				E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */,
+				E1F478FE1BA7030B00702420 /* ViewController.h */,
+				E1F478FF1BA7030B00702420 /* ViewController.m */,
+				E1F479011BA7030B00702420 /* Main.storyboard */,
+				E1F479041BA7030B00702420 /* Images.xcassets */,
+				E1F479061BA7030B00702420 /* LaunchScreen.xib */,
+				E1F478FB1BA7030B00702420 /* PrinterDemo.xcdatamodeld */,
+				E1F478F41BA7030B00702420 /* Supporting Files */,
+			);
+			path = PrinterDemo;
+			sourceTree = "<group>";
+		};
+		E1F478F41BA7030B00702420 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1F478F51BA7030B00702420 /* Info.plist */,
+				E1F478F61BA7030B00702420 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1F479101BA7030B00702420 /* PrinterDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1F479131BA7030B00702420 /* PrinterDemoTests.m */,
+				E1F479111BA7030B00702420 /* Supporting Files */,
+			);
+			path = PrinterDemoTests;
+			sourceTree = "<group>";
+		};
+		E1F479111BA7030B00702420 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1F479121BA7030B00702420 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1F9ABC81BA95779001BCB0D /* SVProgressHD */ = {
+			isa = PBXGroup;
+			children = (
+				E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */,
+				E1F9ABCA1BA95779001BCB0D /* SVProgressHUD.h */,
+				E1F9ABCB1BA95779001BCB0D /* SVProgressHUD.m */,
+			);
+			path = SVProgressHD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1F478F01BA7030B00702420 /* PrinterDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F479171BA7030B00702420 /* Build configuration list for PBXNativeTarget "PrinterDemo" */;
+			buildPhases = (
+				E1F478ED1BA7030B00702420 /* Sources */,
+				E1F478EE1BA7030B00702420 /* Frameworks */,
+				E1F478EF1BA7030B00702420 /* Resources */,
+				E1D7F4211BA9A92800461CD2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrinterDemo;
+			productName = PrinterDemo;
+			productReference = E1F478F11BA7030B00702420 /* PrinterDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1F4790C1BA7030B00702420 /* PrinterDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F4791A1BA7030B00702420 /* Build configuration list for PBXNativeTarget "PrinterDemoTests" */;
+			buildPhases = (
+				E1F479091BA7030B00702420 /* Sources */,
+				E1F4790A1BA7030B00702420 /* Frameworks */,
+				E1F4790B1BA7030B00702420 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1F4790F1BA7030B00702420 /* PBXTargetDependency */,
+			);
+			name = PrinterDemoTests;
+			productName = PrinterDemoTests;
+			productReference = E1F4790D1BA7030B00702420 /* PrinterDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1F478E91BA7030B00702420 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = com.cmcc;
+				TargetAttributes = {
+					E1F478F01BA7030B00702420 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = V7TXMFEX4X;
+					};
+					E1F4790C1BA7030B00702420 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = E1F478F01BA7030B00702420;
+					};
+				};
+			};
+			buildConfigurationList = E1F478EC1BA7030B00702420 /* Build configuration list for PBXProject "PrinterDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1F478E81BA7030B00702420;
+			productRefGroup = E1F478F21BA7030B00702420 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1F478F01BA7030B00702420 /* PrinterDemo */,
+				E1F4790C1BA7030B00702420 /* PrinterDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1F478EF1BA7030B00702420 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F9ABCC1BA95779001BCB0D /* SVProgressHUD.bundle in Resources */,
+				E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */,
+				E1F479031BA7030B00702420 /* Main.storyboard in Resources */,
+				E1F479081BA7030B00702420 /* LaunchScreen.xib in Resources */,
+				E1F479051BA7030B00702420 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F4790B1BA7030B00702420 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1F478ED1BA7030B00702420 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */,
+				E1F478FA1BA7030B00702420 /* AppDelegate.m in Sources */,
+				E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */,
+				E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */,
+				E1F479001BA7030B00702420 /* ViewController.m in Sources */,
+				E1F478F71BA7030B00702420 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F479091BA7030B00702420 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F479141BA7030B00702420 /* PrinterDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1F4790F1BA7030B00702420 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1F478F01BA7030B00702420 /* PrinterDemo */;
+			targetProxy = E1F4790E1BA7030B00702420 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1F479011BA7030B00702420 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1F479021BA7030B00702420 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1F479061BA7030B00702420 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1F479071BA7030B00702420 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1F479151BA7030B00702420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1F479161BA7030B00702420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1F479181BA7030B00702420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PrinterDemo",
+					"$(PROJECT_DIR)/PrinterDemo/PgyUpdate/PgySDK/sdk",
+				);
+				INFOPLIST_FILE = PrinterDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PrinterDemo",
+					"$(PROJECT_DIR)/PrinterDemo/Printer/PrinterUtils",
+					"$(PROJECT_DIR)/PrinterDemo/Printer",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jxc.xinfubaoiphone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		E1F479191BA7030B00702420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PrinterDemo",
+					"$(PROJECT_DIR)/PrinterDemo/PgyUpdate/PgySDK/sdk",
+				);
+				INFOPLIST_FILE = PrinterDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PrinterDemo",
+					"$(PROJECT_DIR)/PrinterDemo/Printer/PrinterUtils",
+					"$(PROJECT_DIR)/PrinterDemo/Printer",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jxc.xinfubaoiphone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		E1F4791B1BA7030B00702420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrinterDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrinterDemo.app/PrinterDemo";
+			};
+			name = Debug;
+		};
+		E1F4791C1BA7030B00702420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrinterDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrinterDemo.app/PrinterDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1F478EC1BA7030B00702420 /* Build configuration list for PBXProject "PrinterDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F479151BA7030B00702420 /* Debug */,
+				E1F479161BA7030B00702420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F479171BA7030B00702420 /* Build configuration list for PBXNativeTarget "PrinterDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F479181BA7030B00702420 /* Debug */,
+				E1F479191BA7030B00702420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F4791A1BA7030B00702420 /* Build configuration list for PBXNativeTarget "PrinterDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F4791B1BA7030B00702420 /* Debug */,
+				E1F4791C1BA7030B00702420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E1F478FB1BA7030B00702420 /* PrinterDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E1F478FC1BA7030B00702420 /* PrinterDemo.xcdatamodel */,
+			);
+			currentVersion = E1F478FC1BA7030B00702420 /* PrinterDemo.xcdatamodel */;
+			path = PrinterDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E1F478E91BA7030B00702420 /* Project object */;
+}

@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "984E842E-1006-4E78-9C03-F41A671F5146",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : "printerSDK\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PrinterDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "github\/PrinterDemoDev\/PrinterDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/mmd520.cn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9483537c-b847-49c3-805d-b05972c36ec1++398"
+    }
+  ]
+}
