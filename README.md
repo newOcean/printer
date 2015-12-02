@@ -6,8 +6,8 @@ English Readme<br>
 4.any problem please feel free to email to erduhai@qq.com<br>
 <br>
 中文介绍<br>
-为了方便广大ios应用开发者使用打印功能，特发布此sdk。<br>
-支持iphone4s及更新设备，支持ipad2以上的设备<br>
+为了方便广大ios应用开发者使用蓝牙打印功能，特发布此sdk。<br>
+支持iphone4s及更新设备，支持ipad2以上的设备，支持便携式蓝牙小票打印机，标签打印机<br>
 <br>
 实现的功能：<br>
 1.已经支持58mm 80mm 110mm 蓝牙打印机，以及airprint苹果台式打印机。如果发现适配问题（乱码，二维码不能打印等），请联系QQ153887715<br>
