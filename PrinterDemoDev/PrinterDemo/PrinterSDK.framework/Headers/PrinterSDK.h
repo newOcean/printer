@@ -71,7 +71,7 @@
 @interface PrinterWraper : NSObject
 /* 打印设置的默认值，可以修改，或者获取此值，对应于打印模版设置的内容
  @"lineSpace"  :@28    0～254 默认28  对应4毫米
-  @{@"printertype":@0,// 打印机宽度  0 58mm,1 80mm,2 110mm,3 airprint A4（台式无线打印机）
+  @{@"printertype":@0,// 打印机宽度  0 58mm,1 80mm,2 110mm,3,A4 针式打印机蓝牙适配器,3 airprint A4（台式无线打印机）
 @"printerfontsize":@0,//字体大小 0 小，1中，2大
 @"copycount":@0,//0 1联，1 2联 ，2 3联
 @"autoprint":@0,//0 不自动打印  1自动打印
