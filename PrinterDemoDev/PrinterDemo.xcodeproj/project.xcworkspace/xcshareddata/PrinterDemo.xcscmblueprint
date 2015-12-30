@@ -4,23 +4,33 @@
     "9483537c-b847-49c3-805d-b05972c36ec1++5326" : {
 
     },
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : {
+
+    },
     "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "9483537c-b847-49c3-805d-b05972c36ec1++5326" : 0,
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : 0,
     "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "984E842E-1006-4E78-9C03-F41A671F5146",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "9483537c-b847-49c3-805d-b05972c36ec1++5326" : "..\/..",
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : "..",
     "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505" : "printer\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "PrinterDemo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PrinterDemoDev\/PrinterDemo.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/mmd520.cn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9483537c-b847-49c3-805d-b05972c36ec1++398"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/niurenhaiyang.cn",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
