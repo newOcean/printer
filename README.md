@@ -1,5 +1,5 @@
 # printer
-不支持模拟器，请使用真机调试！
+编译不支持模拟器，请选择真机！
 
 English Readme<br>
 1.support ios bluetooth printer, airprinter<br>
