@@ -1,4 +1,6 @@
 # printer
+不支持模拟器，请使用真机调试！
+
 English Readme<br>
 1.support ios bluetooth printer, airprinter<br>
 2.support text,barcode print<br>
