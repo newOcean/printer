@@ -245,7 +245,7 @@
 				TargetAttributes = {
 					E1F478F01BA7030B00702420 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = V7TXMFEX4X;
+						DevelopmentTeam = WFC7JFVM3X;
 					};
 					E1F4790C1BA7030B00702420 = {
 						CreatedOnToolsVersion = 6.4;
@@ -460,7 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yang jian (V7TXMFEX4X)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou fuleyou Technology Co.,Ltd.";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

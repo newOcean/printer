@@ -72,7 +72,7 @@
 /* 打印设置的默认值，可以修改，或者获取此值，对应于打印模版设置的内容
  @"lineSpace"  :@28    0～254 默认28  对应4毫米
   @{@"printertype":@0,// 打印机宽度  0 58mm,1 80mm,2 110mm,3,A4 针式打印机蓝牙适配器,3 airprint A4（台式无线打印机）
-@"printerfontsize":@0,//字体大小 0 小，1中，2大
+@"printerfontsize":@0,//字体大小 0自动, 1小，2中，3大,
 @"copycount":@0,//0 1联，1 2联 ，2 3联
 @"autoprint":@0,//0 不自动打印  1自动打印
 @"company":NSLocalizedString(@"公司名称", @""),//公司名称 第一行自动居中 大字体，可多行
@@ -103,12 +103,7 @@
 
 //打印内容,需要自己排版好
 
-/*
- dic=@{@"textToPrint":textToPrint,@"barcode":barcode};
- sender 用来打开蓝牙选择列表，如果是首次打印请确保本身的navigationController是有效的
- uid 指定打印机  nil
- */
-+(BOOL)printDictionary:(NSDictionary*)dic fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid needPreview:(BOOL)needPreview;
+
 
 //根据订单数据model打印，SDK负责排版
 +(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid preview:(BOOL)preview;
@@ -119,6 +114,21 @@
 //自动连接上一次使用的打印机
 +(void)autoConnectLastPrinterTimeout:(NSInteger)timeout Completion:(void(^)(NSString *))block;
 +(BOOL)isConnected;
+
+
+//分行格式控制打印
+//fontSize 字体大小 0小字体,1中字体,2大，
+//lineSpace  :行间距 0～254 默认28  对应4毫米
+//alin 对齐 0左，1居中，2右
++(void)setPrintFormat:(int)printerfontsize LineSpace:(int)lineSpace alinment:(int)alin;
++(void)addPrintText:(NSString*)text;
++(void)addPrintImage:(UIImage*)img;
+//二维码或者一维码 text必须是英文字符 ，istwo＝NO 打印一维码，text必须是12-13位数字
++(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(BOOL)isTwo;
+//打印商品列表 自动排版噢 数组里面是productModel
++(void)addItemList:(NSArray*)productList;
+//打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表
++(BOOL)startPrint:(UINavigationController*)nav;
 @end
 
 
