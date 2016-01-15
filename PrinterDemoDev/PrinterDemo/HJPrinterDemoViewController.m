@@ -85,6 +85,9 @@
     [PrinterWraper addItemList:list];
     [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:YES];//二维码
     [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:NO];//1维码
+    
+     NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
+    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
     [PrinterWraper addPrintText:@"\n\n"];//打印文字
     [PrinterWraper startPrint:self.navigationController];
     
