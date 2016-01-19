@@ -39,7 +39,9 @@
     
     NSDictionary*configure=[PrinterWraper getPrinterSetting];
     NSMutableDictionary *newdic =[NSMutableDictionary dictionaryWithDictionary:configure];
-    [newdic setObject:@1 forKey:@"showconfigure"];
+//    [newdic setObject:@1 forKey:@"showconfigure"];
+    
+    
     [newdic setObject:@YES forKey:@"needdisconnect"];//
     [PrinterWraper setPrinterSetting:newdic];
     
