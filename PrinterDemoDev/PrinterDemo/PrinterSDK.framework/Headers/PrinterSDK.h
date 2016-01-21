@@ -124,7 +124,7 @@
 +(void)addPrintText:(NSString*)text;
 +(void)addPrintImage:(UIImage*)img;
 //二维码或者一维码 text必须是英文字符 ，istwo＝NO 打印一维码，text必须是12-13位数字
-+(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(BOOL)isTwo;
++(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(int)isTwo;
 //打印商品列表 自动排版噢 数组里面是productModel
 +(void)addItemList:(NSArray*)productList;
 //打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表
