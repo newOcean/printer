@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */; };
 		E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */; };
+		E1AA88A51C75B25500FD3450 /* FormatSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88A41C75B25500FD3450 /* FormatSettingTableViewController.m */; };
+		E1AA88A81C75B31800FD3450 /* ValueEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88A71C75B31800FD3450 /* ValueEditViewController.m */; };
+		E1AA88AB1C75C2D800FD3450 /* PrinterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88AA1C75C2D800FD3450 /* PrinterListViewController.m */; };
+		E1AA88AF1C75C49000FD3450 /* PrinterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AA88AE1C75C49000FD3450 /* PrinterSDK.framework */; };
+		E1AA88B01C75C52200FD3450 /* PrinterSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1AA88AE1C75C49000FD3450 /* PrinterSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1B62D481BE4746C00E00E2C /* PgyUpdate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B62D471BE4746C00E00E2C /* PgyUpdate.framework */; };
 		E1DC34F31C4920BA0089C3DF /* ico180.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC34F21C4920BA0089C3DF /* ico180.png */; };
 		E1F478F71BA7030B00702420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F61BA7030B00702420 /* main.m */; };
@@ -21,9 +26,7 @@
 		E1F479141BA7030B00702420 /* PrinterDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F479131BA7030B00702420 /* PrinterDemoTests.m */; };
 		E1F9ABCC1BA95779001BCB0D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */; };
 		E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F9ABCB1BA95779001BCB0D /* SVProgressHUD.m */; };
-		E1FE89081C0E7F420093C458 /* PrinterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FE89071C0E7F420093C458 /* PrinterSDK.framework */; };
 		E1FE89091C0E7F540093C458 /* PrinterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FE89071C0E7F420093C458 /* PrinterSDK.framework */; };
-		E1FE890A1C0E7F540093C458 /* PrinterSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1FE89071C0E7F420093C458 /* PrinterSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E1FE890A1C0E7F540093C458 /* PrinterSDK.framework in Embed Frameworks */,
+				E1AA88B01C75C52200FD3450 /* PrinterSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +57,13 @@
 		E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPrinterDemoViewController.h; sourceTree = "<group>"; };
 		E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPrinterDemoViewController.m; sourceTree = "<group>"; };
 		E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJPrinterDemoViewController.xib; sourceTree = "<group>"; };
+		E1AA88A31C75B25500FD3450 /* FormatSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatSettingTableViewController.h; sourceTree = "<group>"; };
+		E1AA88A41C75B25500FD3450 /* FormatSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatSettingTableViewController.m; sourceTree = "<group>"; };
+		E1AA88A61C75B31800FD3450 /* ValueEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueEditViewController.h; sourceTree = "<group>"; };
+		E1AA88A71C75B31800FD3450 /* ValueEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueEditViewController.m; sourceTree = "<group>"; };
+		E1AA88A91C75C2D800FD3450 /* PrinterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterListViewController.h; sourceTree = "<group>"; };
+		E1AA88AA1C75C2D800FD3450 /* PrinterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrinterListViewController.m; sourceTree = "<group>"; };
+		E1AA88AE1C75C49000FD3450 /* PrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PrinterSDK.framework; sourceTree = "<group>"; };
 		E1B62D471BE4746C00E00E2C /* PgyUpdate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PgyUpdate.framework; sourceTree = "<group>"; };
 		E1DC34F21C4920BA0089C3DF /* ico180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico180.png; sourceTree = "<group>"; };
 		E1F478F11BA7030B00702420 /* PrinterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +83,7 @@
 		E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		E1F9ABCA1BA95779001BCB0D /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		E1F9ABCB1BA95779001BCB0D /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		E1FE89071C0E7F420093C458 /* PrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PrinterSDK.framework; sourceTree = "<group>"; };
+		E1FE89071C0E7F420093C458 /* PrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PrinterSDK.framework; path = "/Users/wuyiqi/Desktop/researchProject/printerSDK/svn-github/printer/PrinterDemoDev/PrinterDemo/PrinterSDK.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AA88AF1C75C49000FD3450 /* PrinterSDK.framework in Frameworks */,
 				E1FE89091C0E7F540093C458 /* PrinterSDK.framework in Frameworks */,
-				E1FE89081C0E7F420093C458 /* PrinterSDK.framework in Frameworks */,
 				E1B62D481BE4746C00E00E2C /* PgyUpdate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +107,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1AA88B11C75C83E00FD3450 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA88A91C75C2D800FD3450 /* PrinterListViewController.h */,
+				E1AA88AA1C75C2D800FD3450 /* PrinterListViewController.m */,
+				E1AA88A61C75B31800FD3450 /* ValueEditViewController.h */,
+				E1AA88A71C75B31800FD3450 /* ValueEditViewController.m */,
+				E1AA88A31C75B25500FD3450 /* FormatSettingTableViewController.h */,
+				E1AA88A41C75B25500FD3450 /* FormatSettingTableViewController.m */,
+			);
+			name = setting;
+			sourceTree = "<group>";
+		};
 		E1B62D441BE4746C00E00E2C /* PgyUpdate */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +165,9 @@
 		E1F478F31BA7030B00702420 /* PrinterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E1AA88AE1C75C49000FD3450 /* PrinterSDK.framework */,
+				E1AA88B11C75C83E00FD3450 /* setting */,
 				E1DC34F21C4920BA0089C3DF /* ico180.png */,
-				E1FE89071C0E7F420093C458 /* PrinterSDK.framework */,
 				E1B62D441BE4746C00E00E2C /* PgyUpdate */,
 				E1F9ABC81BA95779001BCB0D /* SVProgressHD */,
 				E1F478F81BA7030B00702420 /* AppDelegate.h */,
@@ -303,11 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AA88A51C75B25500FD3450 /* FormatSettingTableViewController.m in Sources */,
 				E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */,
 				E1F478FA1BA7030B00702420 /* AppDelegate.m in Sources */,
 				E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */,
 				E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */,
 				E1F479001BA7030B00702420 /* ViewController.m in Sources */,
+				E1AA88AB1C75C2D800FD3450 /* PrinterListViewController.m in Sources */,
+				E1AA88A81C75B31800FD3450 /* ValueEditViewController.m in Sources */,
 				E1F478F71BA7030B00702420 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,8 +477,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PrinterDemo",
-					"$(PROJECT_DIR)/PrinterDemo/Printer/PrinterUtils",
-					"$(PROJECT_DIR)/PrinterDemo/Printer",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.jxc.xinfubaoiphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,8 +502,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PrinterDemo",
-					"$(PROJECT_DIR)/PrinterDemo/Printer/PrinterUtils",
-					"$(PROJECT_DIR)/PrinterDemo/Printer",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.jxc.xinfubaoiphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";

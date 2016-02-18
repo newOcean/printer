@@ -33,27 +33,44 @@
     //自动更新测试app
     [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"d64c6ec8b9047b8de63bff6e89874f99"];
     [[PgyUpdateManager sharedPgyManager] checkUpdate];
-    
-    
-    
-    
-    NSDictionary*configure=[PrinterWraper getPrinterSetting];
-    NSMutableDictionary *newdic =[NSMutableDictionary dictionaryWithDictionary:configure];
-//    [newdic setObject:@1 forKey:@"hideConfigure"];//隐藏配置界面
-    
-    
-    [newdic setObject:@YES forKey:@"needdisconnect"];//
-    [PrinterWraper setPrinterSetting:newdic];
-    
+
     [SVProgressHUD showWithStatus:@"正在自动连接打印机"];
     
     [PrinterWraper autoConnectLastPrinterTimeout:10 Completion:^(NSString *uid) {
         NSLog(@"自动连接 uid=%@",uid);
-        [SVProgressHUD dismiss];
+        if (uid) {
+            [SVProgressHUD showSuccessWithStatus:@"自动连接成功"];
+        }else
+            [SVProgressHUD dismiss];
     }];
+    
+    [self appearanceConfig];
     return YES;
 }
+- (void)appearanceConfig
+{
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [[UINavigationBar appearance] setBackgroundImage:[self statusBar] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:18.]}];
+}
 
+- (UIImage *)statusBar
+{
+    UIImage *image;
+    UIGraphicsBeginImageContext(CGSizeMake([UIScreen mainScreen].bounds.size.width, 20.));
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20.)];
+    CAGradientLayer *gradientLayer1 =  [CAGradientLayer layer];
+    gradientLayer1.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20.);
+    //    [gradientLayer1 setColors:@[(id)RGB(39.,198.,160.).CGColor,(id)RGB(39.,200.,122.).CGColor,(id)RGB(13.,196.,76.).CGColor]];
+    [gradientLayer1 setColors:@[(id)[UIColor redColor].CGColor,(id)[UIColor orangeColor].CGColor]];
+    [gradientLayer1 setStartPoint:CGPointMake(0, 0)];
+    [gradientLayer1 setEndPoint:CGPointMake(1, 0)];
+    [view.layer addSublayer:gradientLayer1];
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

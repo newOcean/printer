@@ -10,6 +10,8 @@
 //#import "PrinterListViewController.h"
 #import <PrinterSDK/PrinterSDK.h>
 //#import "PrinterSDK.h"
+#import "FormatSettingTableViewController.h"
+#import "PrinterListViewController.h"
 @interface HJPrinterDemoViewController ()
 
 @end
@@ -20,12 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //读取打印机设置内容
-    NSDictionary *setting = [PrinterWraper getPrinterSetting];
+//    NSDictionary *setting = [PrinterWraper getPrinterSetting];
 
-    NSMutableDictionary *newsetting=[NSMutableDictionary dictionaryWithDictionary:setting];
-    [newsetting setObject:@1 forKey:@"showconfigure"];//sdk自带打印机配置
+//    NSMutableDictionary *newsetting=[NSMutableDictionary dictionaryWithDictionary:setting];
+//    [newsetting setObject:@1 forKey:@"showconfigure"];//sdk自带打印机配置
 
-    [PrinterWraper setPrinterSetting:newsetting];
+//    [PrinterWraper setPrinterSetting:newsetting];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,13 +48,24 @@
  */
 - (IBAction)print:(id)sender {
   
-    
-//    NSDictionary *setting = [PrinterWraper getPrinterSetting];
 
+    if (![PrinterWraper isConnected]) {
+        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
+
+        [self.navigationController pushViewController:detail animated:YES];
+        return;
+    }
+  
 #warning 请确保本身的navigationController是有效的
 #warning 工程的General->Embedded Binaries  + PrinterSdk.framework
 #warning 请试用真机 否则会有编译错误
-
+    NSArray *headers=@[@"编号",@"名称",@"价格",@"数量",@"小计金额"];
+    NSArray *values0=@[@"0",@"杜蕾斯",@"10",@"1",@"10.0"];
+    NSArray *values1=@[@"0",@"杜蕾斯丝袜",@"100",@"1",@"100.0"];
+    NSArray *values2=@[@"0",@"大白菜",@"1",@"10",@"10.0"];
+    NSArray* body =@[headers,values0,values1,values2];
+    
+#if 0
     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1];// 3 大字体  ，28默认行间距,1局中对齐
      [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
     
@@ -59,26 +74,9 @@
     [PrinterWraper addPrintText:@"掌上开单打印机高质量稳定速度快\n联系QQ40255986 手机15988879319\n"];//打印文字
     
     
-    //打印商品列表
-    NSMutableArray * list = [[NSMutableArray alloc] init];
-    for (int i=0;i<3;i++) {
-        productModel *body =[[ productModel alloc] init];
-  
-        body.barcode_1 =@"123456789012";
-        body.styeNum = @"m1234";
-        body.name = @"比基尼";
-        body.brand =@"杜蕾斯";
-        body.extra1 =@"粉红色";
-        body.extra2 =@"M";
-        body.spec =@"真丝";
-        body.unit=@"件";
-        body.count =@"100";//设置数量
-        body.price =@"99.99";//设置价格
-        body.sum = @"9999";
-        [list addObject:body];
-    }
-    
-    [PrinterWraper addItemList:list];
+
+    [PrinterWraper addItemLines:body];
+
     [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码
     [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:0];//1维码
     
@@ -86,17 +84,33 @@
     [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
     [PrinterWraper addPrintText:@"\n\n"];//打印文字
     [PrinterWraper startPrint:self.navigationController];
+#endif
+   
     
+    printModel *model =[[printModel alloc] init];
+    model.title =@"掌上科技有限公司";
+    model.headText =@"日期：2016-1-2   开单员：小三";
+    model.headerMultiValues =body;
+    
+    model.footText =@"总计  xxx元";
+    model.barcode =@"www.baidu.com";
+    model.advise=@"联系QQ40255986 手机15988879319";
+    [PrinterWraper printModel:model fromviewc:self printeruid:nil preview:YES];
     
 }
 
 
 - (IBAction)choosePrinter:(id)sender {
     
-    //    主动打开打印机配置界面
-        [PrinterWraper chooseNewPrinter:self];
+    PrinterListViewController *detail=[[PrinterListViewController alloc] init];
     
+    [self.navigationController pushViewController:detail animated:YES];
 
+
+}
+- (IBAction)confiurePrinter:(id)sender {
+    FormatSettingTableViewController *detail =[[FormatSettingTableViewController alloc] init];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 

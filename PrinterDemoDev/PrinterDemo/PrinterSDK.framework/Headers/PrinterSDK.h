@@ -24,48 +24,34 @@
 //FOUNDATION_EXPORT const unsigned char PrinterSDKVersionString[];
 #define kNotify_print_finish @"kNotify_print_finish"
 #define kNotify_print_disconnect @"kNotify_print_disconnect"
-//销售商品列表
-@interface productModel : NSObject<NSCopying>
-@property (nonatomic,copy) NSString *oderType;//交易类型 订货，
-@property (nonatomic,copy) NSString *name;//名称
-@property (nonatomic,copy) NSString *styeNum;//款号 货号
-@property (nonatomic,copy) NSString *barcode_1;//条码
-@property (nonatomic,copy) NSString *extra1;//颜色 重量 生产日期
-@property (nonatomic,copy) NSString *extra2;//尺寸 crv  保质期
-@property (nonatomic,copy) NSString *spec;//规格
-@property (nonatomic,copy) NSString *unit;//单位
-@property (nonatomic,copy) NSString *brand;//品牌
-
-@property (nonatomic,copy) NSString *catogry;//分类
-
-
-@property (nonatomic,copy) NSString *count;//数量
-@property (nonatomic,copy) NSString *price;//价格
-@property (nonatomic,copy) NSString *sum;//小记
+//打印机delegate
+@protocol BluetoothDelegate <NSObject>
+-(void)BlueToothOpen:(BOOL)isopen;
+-(void)updateBluetoothDevice:(NSMutableArray*)devices;
+-(void)didConnected:(NSString*)deviceUid Result:(BOOL)success;
+-(void)finishPrint;
 @end
 
 //订单头尾内容
 @interface printModel : NSObject<NSCopying>
-
-@property (nonatomic,copy) NSString *headText;//页眉下面，客户 单号 日期
-@property (nonatomic,copy) NSString *footText;//页脚上面 上期结余 本期应收 下棋结余 备注
-@property (nonatomic,copy) NSString *barcode;//二维码地址
-@property (nonatomic,strong) NSArray *productList;//productModel
 @property (nonatomic,copy) NSString *title;//标题 四季青精品店(销售单)
+@property (nonatomic,copy) NSString *headText;//页眉，
+
+//主体内容三选一
+@property (nonatomic,strong) NSArray *headerMultiValues;//一行表头 多行值
+@property (nonatomic,strong) NSArray *headersValues;//一行表头一行值
+@property (nonatomic,copy) NSString *bodyText;//主体内容
+
+@property (nonatomic,copy) NSString *footText;//页脚
+@property (nonatomic,copy) NSString *advise;//广告 foottext的下方
+@property (nonatomic,copy) NSString *barcode;//二维码地址
 
 
-//预览时使用
-@property (nonatomic,copy) NSString *time;//订单日期
-@property (nonatomic,copy) NSString *customer;//客户详情
-@property (nonatomic,copy) NSString *totalAmount;//本单金额
-@property (nonatomic,copy) NSString *payed;//本单付款
-@property (nonatomic,copy) NSString *arrears;//累积欠款
-@property (nonatomic,copy) NSString *comment;//备注
 //--------end
 
-@property int odertype;//0销售单 1采购单 2批发单 如果写了标题就不需要
+//@property int odertype;//0销售单 1采购单 2批发单 如果写了标题就不需要
 @property BOOL isLabel;//打印标签，打印productList中所有商品的标签,name,color,size,barcode_1,price
-@property BOOL composedSummary;//数量 价格 小记 是否合到一起（数量/单价/小记）
+//@property BOOL composedSummary;//数量 价格 小记 是否合到一起（数量/单价/小记）
 @end
 
 @interface PrinterWraper : NSObject
@@ -95,27 +81,24 @@
 };
  */
 +(NSDictionary*)getPrinterSetting;
-
 +(void)setPrinterSetting:(NSDictionary*)dic;
++(NSInteger)getPrinterMaxWidth;//获取打印机字符宽度，32～60个字符宽
+//扫描打印机
++(void)StartScanDelegate:(id)delegate Timeout:(int)timeout;
++(void)StopScan;
 
++(void)connectPrinter:(NSString*)peripheraluid shouldreset:(BOOL)reset;
++(void)disconnectPrinter:(NSString*)uid;
 
-
-
-//打印内容,需要自己排版好
-
-
-
-//根据订单数据model打印，SDK负责排版
-+(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid preview:(BOOL)preview;
-//显示预览
-+(void)presentPreviewFromView:(UIViewController*)vc oderlist:(NSArray*)oderlist odertype:(BOOL)isbuy;
-//选择新的打印机 配置小票模版 请确保本身的navigationController是有效的
-+(void)chooseNewPrinter:(UIViewController*)sender;
+//选择打印机
+//+(void)chooseNewPrinter:(UIViewController*)sender;
 //自动连接上一次使用的打印机
 +(void)autoConnectLastPrinterTimeout:(NSInteger)timeout Completion:(void(^)(NSString *))block;
 +(BOOL)isConnected;
 
 
+//根据订单数据model打印，SDK负责排版
++(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid preview:(BOOL)preview;
 //分行格式控制打印
 //fontSize 字体大小 0小字体,1中字体,2大，
 //lineSpace  :行间距 0～254 默认28  对应4毫米
@@ -123,10 +106,9 @@
 +(void)setPrintFormat:(int)printerfontsize LineSpace:(int)lineSpace alinment:(int)alin;
 +(void)addPrintText:(NSString*)text;
 +(void)addPrintImage:(UIImage*)img;
++(void)addItemLines:(NSArray*)headervalue;//打印多行商品列表
 //二维码或者一维码 text必须是英文字符 ，istwo＝NO 打印一维码，text必须是12-13位数字
 +(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(int)isTwo;
-//打印商品列表 自动排版噢 数组里面是productModel
-+(void)addItemList:(NSArray*)productList;
 //打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表
 +(BOOL)startPrint:(UINavigationController*)nav;
 @end
