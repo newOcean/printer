@@ -49,23 +49,24 @@
 - (IBAction)print:(id)sender {
   
 
-    if (![PrinterWraper isConnected]) {
-        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
 
-        [self.navigationController pushViewController:detail animated:YES];
-        return;
-    }
   
 #warning 请确保本身的navigationController是有效的
 #warning 工程的General->Embedded Binaries  + PrinterSdk.framework
 #warning 请试用真机 否则会有编译错误
-    NSArray *headers=@[@"编号",@"名称",@"价格",@"数量",@"小计金额"];
-    NSArray *values0=@[@"0",@"杜蕾斯",@"10",@"1",@"10.0"];
-    NSArray *values1=@[@"0",@"杜蕾斯丝袜",@"100",@"1",@"100.0"];
-    NSArray *values2=@[@"0",@"大白菜",@"1",@"10",@"10.0"];
+    NSArray *headers =@[@"编号",@"名称",@"价格",@"数量",@"小计金额"];
+    NSArray *values0 =@[@"0",@"杜蕾斯",@"10",@"1",@"10.0"];
+    NSArray *values1 =@[@"0",@"杜蕾斯丝袜",@"100",@"1",@"100.0"];
+    NSArray *values2 =@[@"0",@"大白菜",@"1",@"10",@"10.0"];
     NSArray* body =@[headers,values0,values1,values2];
     
 #if 0
+    if (![PrinterWraper isConnected]) {
+        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
+        
+        [self.navigationController pushViewController:detail animated:YES];
+        return;
+    }
     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1];// 3 大字体  ，28默认行间距,1局中对齐
      [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
     
@@ -94,8 +95,18 @@
     
     model.footText =@"总计  xxx元";
     model.barcode =@"www.baidu.com";
-    model.advise=@"联系QQ40255986 手机15988879319";
-    [PrinterWraper printModel:model fromviewc:self printeruid:nil preview:YES];
+    model.advise =@"联系QQ40255986 手机15988879319";
+    
+    [PrinterWraper printModel:model fromviewc:self printeruid:nil preview:YES failed:^(BOOL res ){
+       //在打印失败的时候 利用这个block来选择打印机。
+      
+            PrinterListViewController *detail=[[PrinterListViewController alloc] init];
+            detail.taskmodel =model;
+            [self.navigationController pushViewController:detail animated:YES];
+
+        
+    
+    }];
     
 }
 

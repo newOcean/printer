@@ -99,11 +99,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-//    if (!(IOS7)) {
-//        [HjToolsSDK showWarning:NSLocalizedString(@"大侠，打印功能只支持IOS7及以上系统！", @"") delegate:nil ];
-//        return;
-//    }
-//     printDevice.delegate=self;
+
 
     [self scanPrinter:nil ];
     
@@ -114,9 +110,9 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [SVProgressHUD dismiss];
-//    printDevice.delegate=nil;
+
     [self stopScan];
+    [PrinterWraper SetBlutoothDelegate:nil];
 
 }
 #pragma mark 按钮
@@ -162,7 +158,8 @@
     //clean
 //    [self stopScan];
   
-    [PrinterWraper StartScanDelegate:self Timeout:10];
+    [PrinterWraper SetBlutoothDelegate:self];
+    [PrinterWraper StartScanTimeout:10];
     mytimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(timeout) userInfo:nil repeats:NO];
     activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
@@ -253,7 +250,7 @@
             [self.navigationController popViewControllerAnimated:YES];
         }else if(self.taskmodel)
         {
-            [PrinterWraper printModel:self.taskmodel fromviewc:nil printeruid:nil preview:NO];
+            [PrinterWraper printModel:self.taskmodel fromviewc:nil printeruid:nil preview:NO failed:nil];
             self.taskmodel=nil;
             [self.navigationController popViewControllerAnimated:YES];
         }

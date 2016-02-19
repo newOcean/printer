@@ -84,7 +84,8 @@
 +(void)setPrinterSetting:(NSDictionary*)dic;
 +(NSInteger)getPrinterMaxWidth;//获取打印机字符宽度，32～60个字符宽
 //扫描打印机
-+(void)StartScanDelegate:(id)delegate Timeout:(int)timeout;
++(void)SetBlutoothDelegate:(id)delegate;
++(void)StartScanTimeout:(int)timeout;
 +(void)StopScan;
 
 +(void)connectPrinter:(NSString*)peripheraluid shouldreset:(BOOL)reset;
@@ -97,8 +98,9 @@
 +(BOOL)isConnected;
 
 
+
 //根据订单数据model打印，SDK负责排版
-+(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid preview:(BOOL)preview;
++(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid preview:(BOOL)preview failed:(void (^)( BOOL res ))choose;
 //分行格式控制打印
 //fontSize 字体大小 0小字体,1中字体,2大，
 //lineSpace  :行间距 0～254 默认28  对应4毫米
