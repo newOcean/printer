@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PrinterSDK/PrinterSDK.h>
+#import "FormatSettingTableViewController.h"
 @interface PrinterListViewController : UIViewController
 @property BOOL hasTask;
 

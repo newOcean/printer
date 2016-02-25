@@ -31,18 +31,18 @@
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
     //自动更新测试app
-    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"d64c6ec8b9047b8de63bff6e89874f99"];
-    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"d64c6ec8b9047b8de63bff6e89874f99"];
+//    [[PgyUpdateManager sharedPgyManager] checkUpdate];
 
-    [SVProgressHUD showWithStatus:@"正在自动连接打印机"];
-    
-    [PrinterWraper autoConnectLastPrinterTimeout:10 Completion:^(NSString *uid) {
-        NSLog(@"自动连接 uid=%@",uid);
-        if (uid) {
-            [SVProgressHUD showSuccessWithStatus:@"自动连接成功"];
-        }else
-            [SVProgressHUD dismiss];
-    }];
+//    [SVProgressHUD showWithStatus:@"正在自动连接打印机"];
+//    
+//    [PrinterWraper autoConnectLastPrinterTimeout:10 Completion:^(NSString *uid) {
+//        NSLog(@"自动连接 uid=%@",uid);
+//        if (uid) {
+//            [SVProgressHUD showSuccessWithStatus:@"自动连接成功"];
+//        }else
+//            [SVProgressHUD dismiss];
+//    }];
     
     [self appearanceConfig];
     return YES;

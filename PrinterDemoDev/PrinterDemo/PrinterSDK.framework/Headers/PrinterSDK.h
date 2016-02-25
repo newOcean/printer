@@ -41,6 +41,8 @@
 @property (nonatomic,strong) NSArray *headerMultiValues;//一行表头 多行值
 @property (nonatomic,strong) NSArray *headersValues;//一行表头一行值
 @property (nonatomic,copy) NSString *bodyText;//主体内容
+@property (nonatomic,copy) NSString *sumaryText;//总计 大字体打印
+
 
 @property (nonatomic,copy) NSString *footText;//页脚
 @property (nonatomic,copy) NSString *advise;//广告 foottext的下方
@@ -83,6 +85,7 @@
 +(NSDictionary*)getPrinterSetting;
 +(void)setPrinterSetting:(NSDictionary*)dic;
 +(NSInteger)getPrinterMaxWidth;//获取打印机字符宽度，32～60个字符宽
++(NSString*)getSplitLine;//获取标准的分割线
 //扫描打印机
 +(void)SetBlutoothDelegate:(id)delegate;
 +(void)StartScanTimeout:(int)timeout;
@@ -95,8 +98,8 @@
 //+(void)chooseNewPrinter:(UIViewController*)sender;
 //自动连接上一次使用的打印机
 +(void)autoConnectLastPrinterTimeout:(NSInteger)timeout Completion:(void(^)(NSString *))block;
-+(BOOL)isConnected;
-
++(BOOL)isPrinterConnected;
+//+(BOOL)isConnected;
 
 
 //根据订单数据model打印，SDK负责排版

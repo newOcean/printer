@@ -160,6 +160,7 @@
   
     [PrinterWraper SetBlutoothDelegate:self];
     [PrinterWraper StartScanTimeout:10];
+   
     mytimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(timeout) userInfo:nil repeats:NO];
     activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     

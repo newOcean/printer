@@ -8,7 +8,7 @@
 
 #import "FormatSettingTableViewController.h"
 #import "ValueEditViewController.h"
-#import <PrinterSDK/PrinterSDK.h>
+//#import "HjTools.h"
 @interface FormatSettingTableViewController ()<UIActionSheetDelegate>
 {
     UIPickerView *pick;
@@ -45,10 +45,9 @@
   TextIndexarray    = @[@"printertype", @"printerfontsize",@"copycount",@"autoprint",@"printphone",@"company",@"operater",@"welcome",@"barcode"];
   TextIndexarrayCN =@[ NSLocalizedString(@"打印机宽度", @""), NSLocalizedString(@"字体大小", @""),NSLocalizedString(@"打印联数", @""),NSLocalizedString(@"保存后自动打印", @""),NSLocalizedString(@"打印客户详情", @""), NSLocalizedString(@"公司名称", @""), NSLocalizedString(@"开单员", @""), NSLocalizedString(@"页脚", @""), NSLocalizedString(@"二维码", @""),];
     
-    NSString*extra1=@"颜色";
-    NSString*extra2=@"尺寸";
-  ButtonIndexarray  = @[@"type",@"name",@"code",@"styenum",@"extra1",@"extra2",@"spec",@"count",@"unit",@"price",@"xiaoji",@"comment"];
-  ButtonIndexarrayCN  = @[NSLocalizedString(@"类型", @""), NSLocalizedString(@"名称", @""),NSLocalizedString(@"条码", @""),NSLocalizedString(@"款号", @""),extra1,extra2,NSLocalizedString(@"规格", @""),NSLocalizedString(@"数量", @""),NSLocalizedString(@"单位", @""),NSLocalizedString(@"价格", @""),NSLocalizedString(@"小计", @""),NSLocalizedString(@"备注", @"")];
+
+    ButtonIndexarray  = ITEMS_PRODUCT_KEY;
+    ButtonIndexarrayCN  = ITEMS_PRODUCT_VALUE;
     
     printtypeArr = @[@"58mm",@"80mm",@"110mm",NSLocalizedString(@"针式210mm",@""),@"AirPrint 210mm"];
     printFontArr = @[NSLocalizedString(@"自动", @""),NSLocalizedString(@"小字体", @""),NSLocalizedString(@"中字体", @""),NSLocalizedString(@"大字体", @"")];

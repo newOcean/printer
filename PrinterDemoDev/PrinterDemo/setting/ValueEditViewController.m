@@ -7,7 +7,7 @@
 //
 
 #import "ValueEditViewController.h"
-#import <PrinterSDK/PrinterSDK.h>
+#import "FormatSettingTableViewController.h"
 @interface ValueEditViewController ()
 {
     NSMutableDictionary *settingDictionary;
