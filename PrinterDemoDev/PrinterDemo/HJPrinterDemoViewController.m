@@ -60,53 +60,62 @@
     NSArray *values2 =@[@"0",@"大白菜",@"1",@"10",@"10.0"];
     NSArray* body =@[headers,values0,values1,values2];
     
-#if 0
-    if (![PrinterWraper isConnected]) {
+#if 1
+//    自己设置格式
+    if (![PrinterWraper isPrinterConnected]) {
         PrinterListViewController *detail=[[PrinterListViewController alloc] init];
         
         [self.navigationController pushViewController:detail animated:YES];
         return;
     }
-    [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1];// 3 大字体  ，28默认行间距,1局中对齐
-     [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
+//    设置格式 大字体 行间距28 局中
+     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1];// 3 大字体  ，28默认行间距,1局中对齐
+    NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
     
+    //打印logo
+    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+   //打印标题
+     [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
+//    设置主体内容 小字体
     [PrinterWraper setPrintFormat:1 LineSpace:28 alinment:0];// 1 小字体  ，28默认行间距,0左对齐
 
     [PrinterWraper addPrintText:@"掌上开单打印机高质量稳定速度快\n联系QQ40255986 手机15988879319\n"];//打印文字
     
     
-
+//打印商品列表，会自动排版，要求数组长度一致，空白地方用@""
     [PrinterWraper addItemLines:body];
-
+//打印二维码
     [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码
+//    打印一维码
     [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:0];//1维码
+    [PrinterWraper addPrintBarcode:@"123456789013" isTwoDimensionalCode:0];//1维码
     
-     NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
-    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+   
     [PrinterWraper addPrintText:@"\n\n"];//打印文字
+//    开始启动打印
     [PrinterWraper startPrint:self.navigationController];
 #endif
    
-    
-    printModel *model =[[printModel alloc] init];
-    model.title =@"掌上科技有限公司";
-    model.headText =@"日期：2016-1-2   开单员：小三";
-    model.headerMultiValues =body;
-    
-    model.footText =@"总计  xxx元";
-    model.barcode =@"www.baidu.com";
-    model.advise =@"联系QQ40255986 手机15988879319";
-    
-    [PrinterWraper printModel:model fromviewc:self printeruid:nil preview:YES failed:^(BOOL res ){
-       //在打印失败的时候 利用这个block来选择打印机。
-      
-            PrinterListViewController *detail=[[PrinterListViewController alloc] init];
-            detail.taskmodel =model;
-            [self.navigationController pushViewController:detail animated:YES];
-
-        
-    
-    }];
+//    偷懒的做法
+//    printModel *model =[[printModel alloc] init];
+//    model.title =@"掌上科技有限公司";
+//    model.headText =@"日期：2016-1-2   开单员：小三";
+//    model.headerMultiValues =body;
+//    
+//    model.footText =@"总计  xxx元";
+//    model.barcode =@"www.baidu.com";
+//    model.advise =@"联系QQ40255986 手机15988879319";
+//    
+//    [PrinterWraper printModel:model fromviewc:self printeruid:nil preview:YES failed:^(BOOL res ){
+//       //在打印失败的时候 利用这个block来选择打印机。
+//      
+//            PrinterListViewController *detail=[[PrinterListViewController alloc] init];
+//            detail.taskmodel =model;
+//            [self.navigationController pushViewController:detail animated:YES];
+//
+//        
+//    
+//    }];
     
 }
 

@@ -56,7 +56,7 @@
 //    if ([hideConfigure integerValue] !=1 )
     {
         UIButton *selfprint = [[UIButton alloc] initWithFrame:CGRectMake(8, height, 150, 44)];
-        [selfprint setTitle:NSLocalizedString(@"查看配套打印机", @"") forState:UIControlStateNormal];
+        [selfprint setTitle:NSLocalizedString(@"查看淘宝打印机", @"") forState:UIControlStateNormal];
         [selfprint addTarget:self action:@selector(openTaobao:) forControlEvents:UIControlEventTouchUpInside];
         [selfprint setBackgroundColor:[UIColor orangeColor]];
         [selfprint setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
