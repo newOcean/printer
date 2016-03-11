@@ -99,6 +99,7 @@
 //自动连接上一次使用的打印机
 +(void)autoConnectLastPrinterTimeout:(NSInteger)timeout Completion:(void(^)(NSString *))block;
 +(BOOL)isPrinterConnected;
++(BOOL)isPrinterAvailable;
 //+(BOOL)isConnected;
 
 

@@ -62,12 +62,12 @@
     
 #if 1
 //    自己设置格式
-    if (![PrinterWraper isPrinterConnected]) {
-        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
-        
-        [self.navigationController pushViewController:detail animated:YES];
-        return;
-    }
+//    if (![PrinterWraper isPrinterAvailable]) {
+//        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
+//        
+//        [self.navigationController pushViewController:detail animated:YES];
+//        return;
+//    }
 //    设置格式 大字体 行间距28 局中
      [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1];// 3 大字体  ，28默认行间距,1局中对齐
     NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
@@ -93,7 +93,15 @@
    
     [PrinterWraper addPrintText:@"\n\n"];//打印文字
 //    开始启动打印
-    [PrinterWraper startPrint:self.navigationController];
+//    [PrinterWraper startPrint:self.navigationController];
+    BOOL res=   [PrinterWraper startPrint:self.navigationController];
+    if (!res) {
+        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
+        //        detail.taskmodel =model;
+        [self.navigationController pushViewController:detail animated:YES];
+        
+        
+    }
 #endif
    
 //    偷懒的做法
