@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "HJPrinterDemoViewController.h"
 //#import "PrinterSDK.h"
-#import <PrinterSDK/PrinterSDK.h>
+#import "PrinterSDK.h"
 #import "SVProgressHUD.h"
 #import <PgyUpdate/PgyUpdateManager.h>
 @interface AppDelegate ()

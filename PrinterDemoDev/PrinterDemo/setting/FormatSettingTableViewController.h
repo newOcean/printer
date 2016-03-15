@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <PrinterSDK/PrinterSDK.h>
+#import "PrinterSDK.h"
 
 #define  ITEMS_PRODUCT_KEY  @[@"styenum",@"name",@"code",@"extra1",@"extra2",@"spec",@"count",@"unit",@"price",@"xiaoji"]
 

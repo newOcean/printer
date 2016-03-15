@@ -8,7 +8,7 @@
 
 #import "HJPrinterDemoViewController.h"
 //#import "PrinterListViewController.h"
-#import <PrinterSDK/PrinterSDK.h>
+#import "PrinterSDK.h"
 //#import "PrinterSDK.h"
 #import "FormatSettingTableViewController.h"
 #import "PrinterListViewController.h"
