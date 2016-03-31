@@ -26,7 +26,7 @@
 #define kNotify_print_disconnect @"kNotify_print_disconnect"
 //打印机delegate
 @protocol BluetoothDelegate <NSObject>
--(void)BlueToothOpen:(BOOL)isopen;
+-(void)blueToothOpen:(BOOL)isopen;
 -(void)updateBluetoothDevice:(NSMutableArray*)devices;
 -(void)didConnected:(NSString*)deviceUid Result:(BOOL)success;
 -(void)finishPrint;
