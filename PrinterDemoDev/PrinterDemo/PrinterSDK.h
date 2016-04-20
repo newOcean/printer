@@ -111,7 +111,8 @@
 //fontSize 字体大小 0小字体,1中字体,2大，
 //lineSpace  :行间距 0～254 默认28  对应4毫米
 //alin 对齐 0左，1居中，2右
-+(void)setPrintFormat:(int)printerfontsize LineSpace:(int)lineSpace alinment:(int)alin;
+//rotation 0竖直打印，1顺时针旋转90度打印
++(void)setPrintFormat:(int)printerfontsize LineSpace:(int)lineSpace alinment:(int)alin rotation:(int)rotation;
 +(void)addPrintText:(NSString*)text;
 +(void)addPrintImage:(UIImage*)img;
 +(void)addItemLines:(NSArray*)headervalue;//打印多行商品列表

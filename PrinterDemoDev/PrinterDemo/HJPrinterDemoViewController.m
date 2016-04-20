@@ -69,7 +69,7 @@
 //        return;
 //    }
 //    设置格式 大字体 行间距28 局中
-     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1];// 3 大字体  ，28默认行间距,1局中对齐
+     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1 rotation:0];// 3 大字体  ，28默认行间距,1局中对齐
     NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
     
     //打印logo
@@ -77,7 +77,7 @@
    //打印标题
      [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
 //    设置主体内容 小字体
-    [PrinterWraper setPrintFormat:1 LineSpace:28 alinment:0];// 1 小字体  ，28默认行间距,0左对齐
+    [PrinterWraper setPrintFormat:1 LineSpace:28 alinment:0 rotation:0];// 1 小字体  ，28默认行间距,0左对齐
 
     [PrinterWraper addPrintText:@"掌上开单打印机高质量稳定速度快\n联系QQ40255986 手机15988879319\n"];//打印文字
     
