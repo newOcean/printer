@@ -11,7 +11,7 @@
 //#import "PrinterSDK.h"
 #import "PrinterSDK.h"
 #import "SVProgressHUD.h"
-#import <PgyUpdate/PgyUpdateManager.h>
+//#import <PgyUpdate/PgyUpdateManager.h>
 @interface AppDelegate ()
 
 @end
@@ -30,9 +30,12 @@
     self.window.rootViewController =rootView;
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
-    //自动更新测试app
-//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"d64c6ec8b9047b8de63bff6e89874f99"];
-//    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+    
+    NSDictionary*configure=[PrinterWraper getPrinterSetting];
+    NSMutableDictionary *newdic =[NSMutableDictionary dictionaryWithDictionary:configure];
+    
+    [newdic setObject:@YES forKey:@"needdisconnect"];
+    [PrinterWraper setPrinterSetting:newdic];
 
 //    [SVProgressHUD showWithStatus:@"正在自动连接打印机"];
 //    
