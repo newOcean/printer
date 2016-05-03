@@ -52,8 +52,8 @@
 
   
 #warning 请确保本身的navigationController是有效的
-#warning 工程的General->Embedded Binaries  + PrinterSdk.framework
-#warning 请试用真机 否则会有编译错误
+#warning 请用真机 否则会有编译错误
+    
     NSArray *headers =@[@"编号",@"名称",@"价格",@"数量",@"小计金额"];
     NSArray *values0 =@[@"0",@"杜蕾斯",@"10",@"1",@"10.0"];
     NSArray *values1 =@[@"0",@"杜蕾斯丝袜",@"100",@"1",@"100.0"];
@@ -73,7 +73,7 @@
     NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
     
     //打印logo
-    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+//    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
    //打印标题
      [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
 //    设置主体内容 小字体
@@ -86,7 +86,7 @@
     [PrinterWraper addItemLines:body];
 //打印二维码
     [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码
-//    打印一维码
+//    打印一维码 必须是12-13位数字
     [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:0];//1维码
     [PrinterWraper addPrintBarcode:@"123456789013" isTwoDimensionalCode:0];//1维码
     
