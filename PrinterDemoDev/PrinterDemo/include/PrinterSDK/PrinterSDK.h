@@ -123,6 +123,8 @@
 +(void)addPrintData:(NSData *)data;//直接发送命令
 //定位到下一个标签
 +(void)moveToNextlabel;
+//+(void)setPageHeight:(int)height rotation:(int)rotation;
+//+(void)endPageAndPrint;
 @end
 
 

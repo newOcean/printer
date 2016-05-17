@@ -16,6 +16,7 @@
 		E13FA8BA1C96F34000BA03C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8B01C96F2B900BA03C9 /* SystemConfiguration.framework */; };
 		E13FA8BB1C96F34700BA03C9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8B21C96F2F900BA03C9 /* CFNetwork.framework */; };
 		E13FA8BD1C96F36300BA03C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8BC1C96F36300BA03C9 /* AVFoundation.framework */; };
+		E16EFD5B1CEB1102007C4FB8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16EFD5A1CEB1102007C4FB8 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E1AA88C31C75CAE300FD3450 /* FormatSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88BE1C75CAE300FD3450 /* FormatSettingTableViewController.m */; };
 		E1AA88C41C75CAE300FD3450 /* PrinterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88C01C75CAE300FD3450 /* PrinterListViewController.m */; };
 		E1AA88C51C75CAE300FD3450 /* ValueEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88C21C75CAE300FD3450 /* ValueEditViewController.m */; };
@@ -66,6 +67,7 @@
 		E13FA8B61C96F32000BA03C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E13FA8B81C96F33600BA03C9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E13FA8BC1C96F36300BA03C9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E16EFD5A1CEB1102007C4FB8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E1A9A2811CD09056008C9E20 /* PrinterSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterSDK.h; sourceTree = "<group>"; };
 		E1AA88BD1C75CAE300FD3450 /* FormatSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatSettingTableViewController.h; sourceTree = "<group>"; };
 		E1AA88BE1C75CAE300FD3450 /* FormatSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatSettingTableViewController.m; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16EFD5B1CEB1102007C4FB8 /* CoreFoundation.framework in Frameworks */,
 				E13FA8BD1C96F36300BA03C9 /* AVFoundation.framework in Frameworks */,
 				E13FA8BB1C96F34700BA03C9 /* CFNetwork.framework in Frameworks */,
 				E13FA8BA1C96F34000BA03C9 /* SystemConfiguration.framework in Frameworks */,
@@ -150,6 +153,7 @@
 		E1F478E81BA7030B00702420 = {
 			isa = PBXGroup;
 			children = (
+				E16EFD5A1CEB1102007C4FB8 /* CoreFoundation.framework */,
 				E13FA8BC1C96F36300BA03C9 /* AVFoundation.framework */,
 				E13FA8B81C96F33600BA03C9 /* libz.tbd */,
 				E13FA8B61C96F32000BA03C9 /* MobileCoreServices.framework */,
