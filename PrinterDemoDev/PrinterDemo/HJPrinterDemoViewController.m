@@ -87,8 +87,8 @@
 //打印二维码
     [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码
 //    打印一维码 必须是12-13位数字
-    [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:0];//1维码
-    [PrinterWraper addPrintBarcode:@"123456789013" isTwoDimensionalCode:0];//1维码
+    [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:0];//1维码 upc
+    [PrinterWraper addPrintBarcode:@"123456789013" isTwoDimensionalCode:-1];//1维码 code128
     
    
     [PrinterWraper addPrintText:@"\n\n"];//打印文字
