@@ -87,8 +87,11 @@
 //打印二维码
     [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码
 //    打印一维码 必须是12-13位数字
-    [PrinterWraper addPrintBarcode:@"123456789012" isTwoDimensionalCode:0];//1维码 upc
-    [PrinterWraper addPrintBarcode:@"123456789013" isTwoDimensionalCode:-1];//1维码 code128
+    NSString *formedUPC =[PrinterWraper addUPCLastVerifyCode:@"123456789101"];
+    [PrinterWraper addPrintBarcode:formedUPC isTwoDimensionalCode:0];//1维码 upc 必须按upc规则生成 最后一位是校验位
+  
+    //打印code128 任意位数字母和数字
+    [PrinterWraper addPrintBarcode:@"1234567890123" isTwoDimensionalCode:-1];//1维码 code128
     
    
     [PrinterWraper addPrintText:@"\n\n"];//打印文字
