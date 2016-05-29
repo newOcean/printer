@@ -124,8 +124,8 @@
 //打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表
 +(BOOL)startPrint:(UINavigationController*)nav;
 +(void)addPrintData:(NSData *)data;//直接发送命令
-//定位到下一个标签
-+(void)moveToNextlabel;
+//定位到下一页
++(void)moveToNextPage;
 //+(void)setPageHeight:(int)height rotation:(int)rotation;
 //+(void)endPageAndPrint;
 @end
