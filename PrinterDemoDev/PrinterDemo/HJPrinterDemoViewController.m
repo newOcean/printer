@@ -91,10 +91,10 @@
     [PrinterWraper addPrintBarcode:formedUPC isTwoDimensionalCode:0];//1维码 upc 必须按upc规则生成 最后一位是校验位
   
     //打印code128 任意位数字母和数字
-    [PrinterWraper addPrintBarcode:@"1234567890123" isTwoDimensionalCode:-1];//1维码 code128
+    [PrinterWraper addPrintBarcode:@"12345678901235678" isTwoDimensionalCode:-1];//1维码 code128
     
    
-    [PrinterWraper moveToNextPage];//
+    [PrinterWraper moveToNextPage];//换页
 //    [PrinterWraper addPrintText:@"\n\n"];//打印文字
 //    开始启动打印
 //    [PrinterWraper startPrint:self.navigationController];
