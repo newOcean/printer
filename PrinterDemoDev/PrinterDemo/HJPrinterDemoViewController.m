@@ -130,6 +130,9 @@
 //    }];
     
 }
+- (IBAction)disconnectPrinter:(id)sender {
+    [PrinterWraper disconnectPrinter:nil];
+}
 
 
 - (IBAction)choosePrinter:(id)sender {
