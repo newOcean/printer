@@ -54,6 +54,7 @@
 #warning 请确保本身的navigationController是有效的
 #warning 请用真机 否则会有编译错误
     
+    [PrinterWraper SetBlutoothDelegate:self];
     NSArray *headers =@[@"编号",@"名称",@"价格",@"数量",@"小计金额"];
     NSArray *values0 =@[@"0",@"杜蕾斯",@"10",@"1",@"10.0"];
     NSArray *values1 =@[@"0",@"杜蕾斯丝袜",@"100",@"1",@"100.0"];
@@ -130,6 +131,22 @@
 //    }];
     
 }
+
+-(void)didConnected:(NSString*)deviceUid Result:(BOOL)success;
+{
+    if (success) {
+        return;
+    }
+    UIAlertView*alert =[[UIAlertView alloc] initWithTitle:@"断开连接" message:@"断开连接成功" delegate:self cancelButtonTitle: nil  otherButtonTitles:@"确认", nil];
+    [alert show];
+}
+
+-(void)finishPrint;
+{
+//    [PrinterWraper disconnectPrinter:nil];
+
+}
+
 - (IBAction)disconnectPrinter:(id)sender {
     [PrinterWraper disconnectPrinter:nil];
 }
