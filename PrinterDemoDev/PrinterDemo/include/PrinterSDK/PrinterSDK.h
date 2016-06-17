@@ -81,7 +81,7 @@
 @"xiaoji":@YES,//小记
 @"comment":@YES,//订单备注
 
- @"needdisconnect":@NO //YES打印后断开 支持多手机机链接，速度较慢
+ @"keepAlive":@1 //0打印后断开以让其他手机连接，1自动决定，2打印后继续连接（下次打印速度快）
 };
  */
 +(NSDictionary*)getPrinterSetting;
@@ -93,7 +93,7 @@
 +(void)StartScanTimeout:(int)timeout;
 +(void)StopScan;
 
-+(void)connectPrinter:(NSString*)peripheraluid shouldreset:(BOOL)reset;
++(void)connectPrinter:(NSString*)peripheraluid useCache:(BOOL)cache;
 +(void)disconnectPrinter:(NSString*)uid;
 
 //选择打印机

@@ -34,7 +34,7 @@
     NSDictionary*configure=[PrinterWraper getPrinterSetting];
     NSMutableDictionary *newdic =[NSMutableDictionary dictionaryWithDictionary:configure];
     
-    [newdic setObject:@YES forKey:@"needdisconnect"];
+    [newdic setObject:@0 forKey:@"keepAlive"];//0 打完后断开,1 打完后自动决定,2打完后继续连接
     [PrinterWraper setPrinterSetting:newdic];
 
 //    [SVProgressHUD showWithStatus:@"正在自动连接打印机"];

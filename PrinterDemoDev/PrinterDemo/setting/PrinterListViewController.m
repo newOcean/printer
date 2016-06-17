@@ -303,7 +303,7 @@
     CBPeripheral *device=[deviceList objectAtIndex:indexPath.row];
     choosedIndex =indexPath.row;
 //    [PrinterWraper disconnectPrinter:nil];
-    [PrinterWraper connectPrinter:device.identifier.UUIDString shouldreset:YES];
+    [PrinterWraper connectPrinter:device.identifier.UUIDString useCache:YES];
 
 
     
