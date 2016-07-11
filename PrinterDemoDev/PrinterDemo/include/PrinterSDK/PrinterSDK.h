@@ -93,20 +93,20 @@
 +(void)StartScanTimeout:(int)timeout;
 +(void)StopScan;
 
-+(void)connectPrinter:(NSString*)peripheraluid useCache:(BOOL)cache;
++(void)connectPrinterTag:(NSInteger)tag uid:(NSString*)peripheraluid useCache:(BOOL)cache;
 +(void)disconnectPrinter:(NSString*)uid;
 
 //选择打印机
 //+(void)chooseNewPrinter:(UIViewController*)sender;
 //自动连接上一次使用的打印机
 +(void)autoConnectLastPrinterTimeout:(NSInteger)timeout Completion:(void(^)(NSString *))block;
-+(BOOL)isPrinterConnected;
-+(BOOL)isPrinterAvailable;
++(BOOL)isPrinterConnected:(NSString*)uid;
++(BOOL)isPrinterAvailable:(NSString*)uid;
 //+(BOOL)isConnected;
 
 
-//根据订单数据model打印，SDK负责排版
-+(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printeruid:(NSString*)uid preview:(BOOL)preview failed:(void (^)( BOOL res ))choose;
+//根据订单数据model打印，SDK负责排版,
++(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printerTag:(NSInteger)tag preview:(BOOL)preview failed:(void (^)( BOOL res ))choose;
 //分行格式控制打印
 //fontSize 字体大小 0小字体,1中字体,2大，
 //lineSpace  :行间距 0～254 默认28  对应4毫米
@@ -121,13 +121,12 @@
 +(NSString*)addUPCLastVerifyCode:(NSString*)basecode;
 //二维码或者一维码 text必须是英文字符 ，istwo＝NO 打印一维码，text必须是12-13位数字
 +(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(int)isTwo;
-//打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表
-+(BOOL)startPrint:(UINavigationController*)nav;
+//打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表,
++(BOOL)startPrint:(UINavigationController*)nav deviceTag:(NSInteger)tag;
 +(void)addPrintData:(NSData *)data;//直接发送命令
 //定位到下一页
 +(void)moveToNextPage;
-//+(void)setPageHeight:(int)height rotation:(int)rotation;
-//+(void)endPageAndPrint;
+
 @end
 
 

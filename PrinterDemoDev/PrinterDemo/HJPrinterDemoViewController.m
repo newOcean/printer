@@ -99,7 +99,7 @@
 //    [PrinterWraper addPrintText:@"\n\n"];//打印文字
 //    开始启动打印
 //    [PrinterWraper startPrint:self.navigationController];
-    BOOL res=   [PrinterWraper startPrint:self.navigationController];
+    BOOL res=   [PrinterWraper startPrint:self.navigationController deviceTag:0];
     if (!res) {
         PrinterListViewController *detail=[[PrinterListViewController alloc] init];
         //        detail.taskmodel =model;

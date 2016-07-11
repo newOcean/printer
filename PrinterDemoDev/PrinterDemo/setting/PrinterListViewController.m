@@ -244,14 +244,14 @@
     
     if (buttonIndex==1) {
         if (self.hasTask) {
-            [PrinterWraper startPrint:nil];
+            [PrinterWraper startPrint:nil deviceTag:0];
             self.hasTask =NO;
 //            [PrinterWraper printDictionary:self.task fromviewc:nil  printeruid:nil needPreview:NO];
 //            self.task=nil;
             [self.navigationController popViewControllerAnimated:YES];
         }else if(self.taskmodel)
         {
-            [PrinterWraper printModel:self.taskmodel fromviewc:nil printeruid:nil preview:NO failed:nil];
+            [PrinterWraper printModel:self.taskmodel fromviewc:nil printerTag:0 preview:NO failed:nil];
             self.taskmodel=nil;
             [self.navigationController popViewControllerAnimated:YES];
         }
@@ -260,7 +260,7 @@
 //            NSDictionary*oneOder=@{@"title":@"Sale",@"time": [NSDate date],@"buyer":@"customer",@"payedmoney":[NSNumber numberWithFloat:1000],@"sum":[NSNumber numberWithFloat:1000],@"historymoney":[NSNumber numberWithFloat:0]};
 //            [PrinterWraper printDictionary:oneOder fromviewc:nil printeruid:nil needPreview:NO];
             [PrinterWraper addPrintText:@"掌上开单\n掌上开单\n掌上开单\n掌上开单\nSmart Invoice\nSmart Invoice\nSmart Invoice\n\n\n\n"];
-             [PrinterWraper startPrint:nil];
+             [PrinterWraper startPrint:nil deviceTag:0];
             
         }
     }else
@@ -303,7 +303,8 @@
     CBPeripheral *device=[deviceList objectAtIndex:indexPath.row];
     choosedIndex =indexPath.row;
 //    [PrinterWraper disconnectPrinter:nil];
-    [PrinterWraper connectPrinter:device.identifier.UUIDString useCache:YES];
+    [PrinterWraper connectPrinterTag:0 uid:device.identifier.UUIDString useCache:YES];
+  
 
 
     
