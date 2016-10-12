@@ -3,7 +3,7 @@
 2.支持android webview  调用打印功能，请联系QQ153887715
 3.支持android 手机 ，请联系
 
-编译不支持模拟器，请选择真机！
+github下载地址https://github.com/newOcean/printer
 
 <br>
 便携式蓝牙小票打印机sdk<br>

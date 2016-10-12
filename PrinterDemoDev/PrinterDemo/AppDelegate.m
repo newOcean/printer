@@ -12,6 +12,7 @@
 #import "PrinterSDK.h"
 #import "SVProgressHUD.h"
 //#import <PgyUpdate/PgyUpdateManager.h>
+//github下载地址 https://github.com/newOcean/printer
 @interface AppDelegate ()
 
 @end

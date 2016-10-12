@@ -12,6 +12,7 @@
 //#import "PrinterSDK.h"
 #import "FormatSettingTableViewController.h"
 #import "PrinterListViewController.h"
+//github下载地址 https://github.com/newOcean/printer
 @interface HJPrinterDemoViewController ()
 
 @end

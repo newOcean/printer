@@ -1,26 +1,26 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B1D51B9DC018AA05F372E737B0DA205B316ECF56",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : {
-
-    },
     "9483537c-b847-49c3-805d-b05972c36ec1++398" : {
 
     },
-    "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : {
+
+    },
+    "B1D51B9DC018AA05F372E737B0DA205B316ECF56" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : 0,
     "9483537c-b847-49c3-805d-b05972c36ec1++398" : 0,
-    "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505" : 0
+    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : 0,
+    "B1D51B9DC018AA05F372E737B0DA205B316ECF56" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "984E842E-1006-4E78-9C03-F41A671F5146",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : "..\/..",
     "9483537c-b847-49c3-805d-b05972c36ec1++398" : "..",
-    "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505" : "printer\/"
+    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : "..\/..",
+    "B1D51B9DC018AA05F372E737B0DA205B316ECF56" : "printer\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "PrinterDemo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -39,7 +39,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/erduhai%40qq.com@github.com\/newOcean\/printer",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a305ad4d-cadb-8d40-2dc1-ce57b7db7bff++505"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B1D51B9DC018AA05F372E737B0DA205B316ECF56"
     }
   ]
 }
