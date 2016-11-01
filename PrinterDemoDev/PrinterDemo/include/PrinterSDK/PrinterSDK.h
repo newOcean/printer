@@ -5,10 +5,10 @@
 //---------------使用必读--------------
 
 /*  ---------------使用必读--------------
- 1.已经支持58mm 80mm 110mm 蓝牙打印机，以及airprint苹果台式打印机。如果发现适配问题（乱码，二维码不能打印等），请联系QQ40255986
+ 1.已经支持58mm 80mm 110mm 蓝牙打印机，针式打印机适配器，以及airprint苹果台式打印机。如果发现适配问题（乱码，二维码不能打印等），请联系QQ40255986
  2.使用此sdk表示同意只使用我们代理的打印机（物美价廉^-^）,咨询淘宝购买网址http://shop113684150.taobao.com
- 3.库在使用时，加入工程，并且在工程设置 General ->Embedded Binaries 添加此库
- 4.实现功能，订单打印，二维码打印（部分打印机），多手机同时打印（部分打印机），打印速度快，自动重连
+ 3.实现功能，订单打印，二维码打印（部分打印机），多手机同时打印（部分打印机），打印速度快，自动重连
+ 4.无法打印的打印机，多半是因为打印机品牌太小，没有适配，请到我们淘宝购买。
 */
 
 
@@ -43,8 +43,10 @@
 @property (nonatomic,strong) NSArray *headerMultiValues;//一行表头 多行值
 @property (nonatomic,strong) NSArray *headersValues;//一行表头一行值
 @property (nonatomic,copy) NSString *bodyText;//主体内容
-@property (nonatomic,copy) NSString *sumaryText;//总计 大字体打印
 
+@property (nonatomic,copy) NSString *sumaryText;//总计 大字体打印
+@property (nonatomic,copy) NSString *bodyText2;//核销 小字体打印
+@property (nonatomic,copy) NSString *sumaryText2;//总计 大字体打印
 
 @property (nonatomic,copy) NSString *footText;//页脚
 @property (nonatomic,copy) NSString *advise;//广告 foottext的下方
@@ -121,6 +123,9 @@
 +(NSString*)addUPCLastVerifyCode:(NSString*)basecode;
 //二维码或者一维码 text必须是英文字符 ，istwo＝NO 打印一维码，text必须是12-13位数字
 +(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(int)isTwo;
+
+//清空打印的buffer，比如之前加了很多待打印的文字图片，现在蛋疼不想打了
++(void)cleanPrinterBuffer;
 //打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表,
 +(BOOL)startPrint:(UINavigationController*)nav deviceTag:(NSInteger)tag;
 +(void)addPrintData:(NSData *)data;//直接发送命令
