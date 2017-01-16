@@ -42,8 +42,8 @@
     
 
 //NSLocalizedString(@"公司图标", @"") logo
-  TextIndexarray    = @[@"printertype", @"printerfontsize",@"copycount",@"autoprint",@"printphone",@"company",@"operater",@"welcome",@"barcode"];
-  TextIndexarrayCN =@[ NSLocalizedString(@"打印机宽度", @""), NSLocalizedString(@"字体大小", @""),NSLocalizedString(@"打印联数", @""),NSLocalizedString(@"保存后自动打印", @""),NSLocalizedString(@"打印客户详情", @""), NSLocalizedString(@"公司名称", @""), NSLocalizedString(@"开单员", @""), NSLocalizedString(@"页脚", @""), NSLocalizedString(@"二维码", @""),];
+  TextIndexarray    = @[@"printertype", @"printerfontsize",@"autoprint",@"printphone",@"advise",@"company",@"operater",@"welcome",@"barcode",@"minlength",@"spacelength"];
+  TextIndexarrayCN =@[ NSLocalizedString(@"打印机宽度", @""), NSLocalizedString(@"字体大小", @""),NSLocalizedString(@"保存后自动打印", @""),NSLocalizedString(@"打印客户详情", @""),NSLocalizedString(@"不打印软件版本", @""), NSLocalizedString(@"公司名称", @""), NSLocalizedString(@"店员", @""), NSLocalizedString(@"页脚", @""), NSLocalizedString(@"二维码", @""),NSLocalizedString(@"票据最小长度(行)", @""),NSLocalizedString(@"票据行间距(点)", @"")];
     
 
     ButtonIndexarray  = ITEMS_PRODUCT_KEY;
@@ -124,7 +124,20 @@
             NSNumber * index = [settingDictionary objectForKey:keyword];
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[index intValue]+1];
             
-        }else if ( [keyword isEqualToString:@"autoprint"] || [keyword isEqualToString:@"printphone"])
+        }
+        else if ( [keyword isEqualToString:@"minlength"])
+        {
+            NSNumber * index = [settingDictionary objectForKey:keyword];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[index intValue]];
+            
+        }
+        else if ( [keyword isEqualToString:@"spacelength"])
+        {
+            NSNumber * index = [settingDictionary objectForKey:keyword];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[index intValue]];
+            
+        }
+        else if ( [keyword isEqualToString:@"autoprint"] || [keyword isEqualToString:@"printphone"]|| [keyword isEqualToString:@"advise"])
         {
             NSNumber * index = [settingDictionary objectForKey:keyword];
             if ([index intValue]==0) {
@@ -168,8 +181,6 @@
     if (indexPath.section == 0) {
 
         NSString *keyword = TextIndexarray[indexPath.row];
-        
-//        NSString *value=[settingDictionary objectForKey:keyword];
         if (indexPath.row < 5) {
             choosedKeyword =keyword;
             [self showActionSheet];
@@ -179,6 +190,9 @@
             ValueEditViewController *detail =[[ValueEditViewController alloc ] init];
             detail.title =TextIndexarrayCN[indexPath.row];
             detail.keyword = keyword;
+            if ([keyword isEqualToString:@"minlength"] || [keyword isEqualToString:@"spacelength"]) {
+                detail.isnumber = YES;
+            }
             [self.navigationController pushViewController:detail animated:YES];
         }
         
@@ -197,26 +211,27 @@
 #pragma mark sheet
 -(void)showActionSheet{
     
-    UIActionSheet *action =[[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"请选择", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"取消", @"") destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+    UIActionSheet *action =[[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"请选择", @"") delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
     NSArray *tmp;
     if ([choosedKeyword isEqualToString:@"printertype"] ) {
         tmp =printtypeArr;
     }
-    if ([choosedKeyword isEqualToString:@"printerfontsize"]) {
+    else if ([choosedKeyword isEqualToString:@"printerfontsize"]) {
         tmp = printFontArr;
     }
-    if ([choosedKeyword isEqualToString:@"copycount"]) {
+   else if ([choosedKeyword isEqualToString:@"copycount"]) {
         tmp =@[@"1",@"2",@"3"];
     }
-    if ([choosedKeyword isEqualToString:@"autoprint"]) {
+   else if ([choosedKeyword isEqualToString:@"autoprint"]|| [choosedKeyword isEqualToString:@"printphone"] || [choosedKeyword isEqualToString:@"advise"]) {
         tmp =@[NSLocalizedString(@"否",@""),NSLocalizedString(@"是",@"")];
     }
-    if ([choosedKeyword isEqualToString:@"printphone"]) {
-        tmp =@[NSLocalizedString(@"否",@""),NSLocalizedString(@"是",@"")];
-    }
+  
+    [ action addButtonWithTitle:NSLocalizedString(@"取消", @"")];
+    
     for (NSString *item in tmp) {
         [action addButtonWithTitle:item];
     }
+   
     [action showInView:self.view];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex NS_DEPRECATED_IOS(2_0, 8_3);

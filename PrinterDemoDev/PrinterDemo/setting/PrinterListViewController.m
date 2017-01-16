@@ -10,7 +10,7 @@
 #import "FormatSettingTableViewController.h"
 
 //#import "VirturePrinter.h"
-
+#import <SVProgressHUD.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 //#import "CustomerPrintViewController.h"
 
@@ -18,7 +18,8 @@
 {
     NSArray*deviceList;
 //    NSDictionary*connetedDevice;
-    NSInteger choosedIndex;
+//    NSInteger choosedIndex;
+    NSString*choosedUid;
 //    VirturePrinter*printDevice;
     NSTimer* mytimer;
     UIActivityIndicatorView *activityView;
@@ -56,7 +57,7 @@
 //    if ([hideConfigure integerValue] !=1 )
     {
         UIButton *selfprint = [[UIButton alloc] initWithFrame:CGRectMake(8, height, 150, 44)];
-        [selfprint setTitle:NSLocalizedString(@"查看淘宝打印机", @"") forState:UIControlStateNormal];
+        [selfprint setTitle:NSLocalizedString(@"查看配套打印机", @"") forState:UIControlStateNormal];
         [selfprint addTarget:self action:@selector(openTaobao:) forControlEvents:UIControlEventTouchUpInside];
         [selfprint setBackgroundColor:[UIColor orangeColor]];
         [selfprint setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -93,7 +94,7 @@
 //    printDevice = [VirturePrinter  createPrinterDevice:@"bluetooth"];
 //    printDevice.delegate=self;
 //    deviceList = [printDevice getScanedPrinterList];
-    choosedIndex = -1;
+//    choosedIndex = -1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -200,7 +201,7 @@
     if (!isopen) {
         [self stopScan];
         deviceList=nil;
-        choosedIndex= -1;
+//        choosedIndex= -1;
         [mytableview reloadData];
 //                UIAlertView*alert=[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"请在手机设置－》蓝牙 中打开蓝牙设备",@"") delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"") otherButtonTitles:nil, nil];
 //                [alert show];
@@ -215,7 +216,7 @@
 }
 
 -(void)didConnected:(NSString*)deviceUid  Result:(BOOL)success;{
-//    [SVProgressHUD dismiss];
+    [SVProgressHUD dismiss];
   
     [mytableview reloadData];
     
@@ -238,35 +239,67 @@
     UIAlertView*alert=[[UIAlertView alloc] initWithTitle:nil message:info delegate:self cancelButtonTitle:NSLocalizedString(@"取消", @"") otherButtonTitles:NSLocalizedString(@"确定", @""), nil];
     [alert show];
 }
-
+-(void)printTest{
+    NSArray *headers =@[@"编号",@"名称",@"价格",@"数量",@"小计金额"];
+    NSArray *values0 =@[@"1",@"杜蕾斯",@"10",@"1",@"10.0"];
+    NSArray *values1 =@[@"2",@"丝袜",@"100",@"1",@"100.0"];
+    NSArray *values2 =@[@"3",@"大白菜",@"1",@"10",@"10.0"];
+    NSArray* body =@[headers,values0,values1,values2];
+    
+    //    设置格式 大字体 行间距28 局中
+    [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1 rotation:0];// 3 大字体  ，28默认行间距,1局中对齐
+    //            NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
+    
+    //打印logo
+    //    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+    //打印标题
+    [PrinterWraper addPrintText:@"掌上科技有限公司打印测试\n"];//打印文字
+    //    设置主体内容 小字体
+    [PrinterWraper setPrintFormat:1 LineSpace:28 alinment:0 rotation:0];// 1 小字体  ，28默认行间距,0左对齐
+    
+    [PrinterWraper addPrintText:@"提升店铺档口车销效率，掌上开单助力互联网＋\n联系QQ40255986\n"];//打印文字
+    
+    
+    //打印商品列表，会自动排版，要求数组长度一致，空白地方用@""
+    [PrinterWraper addItemLines:body];
+    //打印二维码
+//    [PrinterWraper addPrintBarcode:@"http://www.pgyer.com/kaidan" isTwoDimensionalCode:1];//二维码
+    //    打印一维码 必须是12-13位数字
+//    [PrinterWraper addPrintBarcode:@"123456" isTwoDimensionalCode:0];//1维码
+    
+    
+    [PrinterWraper addPrintText:@"\n\n\n"];//打印文字
+    //    开始启动打印
+    
+    [PrinterWraper startPrint:nil deviceTag:self.printerTag];
+  
+}
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 {
     
     if (buttonIndex==1) {
+//        CBPeripheral *device=[deviceList objectAtIndex:choosedIndex];
+        
         if (self.hasTask) {
-            [PrinterWraper startPrint:nil deviceTag:0];
+            
+            [PrinterWraper startPrint:nil deviceTag:self.printerTag];
             self.hasTask =NO;
-//            [PrinterWraper printDictionary:self.task fromviewc:nil  printeruid:nil needPreview:NO];
-//            self.task=nil;
+
             [self.navigationController popViewControllerAnimated:YES];
         }else if(self.taskmodel)
         {
-            [PrinterWraper printModel:self.taskmodel fromviewc:nil printerTag:0 preview:NO failed:nil];
+            [PrinterWraper printModel:self.taskmodel fromviewc:nil printerTag:self.printerTag preview:NO failed:nil];
             self.taskmodel=nil;
             [self.navigationController popViewControllerAnimated:YES];
         }
         else
         {
-//            NSDictionary*oneOder=@{@"title":@"Sale",@"time": [NSDate date],@"buyer":@"customer",@"payedmoney":[NSNumber numberWithFloat:1000],@"sum":[NSNumber numberWithFloat:1000],@"historymoney":[NSNumber numberWithFloat:0]};
-//            [PrinterWraper printDictionary:oneOder fromviewc:nil printeruid:nil needPreview:NO];
-            [PrinterWraper addPrintText:@"掌上开单\n掌上开单\n掌上开单\n掌上开单\nSmart Invoice\nSmart Invoice\nSmart Invoice\n\n\n\n"];
-             [PrinterWraper startPrint:nil deviceTag:0];
+            [self printTest];
             
         }
     }else
     {
-        //dis
-//        [printDevice disconnectPrinter:nil];
+
     }
 }
 #pragma  mark table
@@ -301,10 +334,11 @@
 {
 
     CBPeripheral *device=[deviceList objectAtIndex:indexPath.row];
-    choosedIndex =indexPath.row;
-//    [PrinterWraper disconnectPrinter:nil];
-    [PrinterWraper connectPrinterTag:0 uid:device.identifier.UUIDString useCache:YES];
-  
+//    choosedIndex =indexPath.row;
+    choosedUid =device.identifier.UUIDString;
+    [SVProgressHUD showWithStatus:@"..."];
+    [PrinterWraper StopScan];
+    [PrinterWraper connectPrinterTag:self.printerTag uid:device.identifier.UUIDString useCache:YES];
 
 
     

@@ -10,4 +10,5 @@
 
 @interface ValueEditViewController : UIViewController
 @property (nonatomic,strong) NSString *keyword;
+@property BOOL isnumber;
 @end

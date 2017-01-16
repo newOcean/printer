@@ -13,4 +13,6 @@
 
 //@property NSString*printeruid;
 @property printModel *taskmodel;
+//用来区分打印机
+@property NSInteger printerTag;
 @end

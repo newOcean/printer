@@ -62,23 +62,21 @@
     NSArray *values2 =@[@"0",@"大白菜",@"1",@"10",@"10.0"];
     NSArray* body =@[headers,values0,values1,values2];
     
+    NSArray* body2 =@[@[@"oo",@"xx"],@[@"xx",@"00"]];
+    
 #if 1
 //    自己设置格式
-//    if (![PrinterWraper isPrinterAvailable]) {
-//        PrinterListViewController *detail=[[PrinterListViewController alloc] init];
-//        
-//        [self.navigationController pushViewController:detail animated:YES];
-//        return;
-//    }
-//    设置格式 大字体 行间距28 局中
-     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1 rotation:0];// 3 大字体  ，28默认行间距,1局中对齐
-    NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
+  //  NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
     
     //打印logo
-//    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+    //    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+//    设置格式 大字体 行间距28 局中
+     [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1 rotation:0];// 3 大字体  ，28默认行间距,1局中对齐
+
    //打印标题
+ 
      [PrinterWraper addPrintText:@"掌上科技有限公司"];//打印文字
-//    设置主体内容 小字体
+//   中途换格式  设置主体内容 小字体
     [PrinterWraper setPrintFormat:1 LineSpace:28 alinment:0 rotation:0];// 1 小字体  ，28默认行间距,0左对齐
 
     [PrinterWraper addPrintText:@"掌上开单打印机高质量稳定速度快\n联系QQ40255986 手机15988879319\n"];//打印文字
@@ -87,7 +85,7 @@
 //打印商品列表，会自动排版，要求数组长度一致，空白地方用@""
     [PrinterWraper addItemLines:body];
 //打印二维码
-    [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码
+    [PrinterWraper addPrintBarcode:@"http://www.baidu.com" isTwoDimensionalCode:1];//二维码必须是英文和数字
 //    打印一维码 必须是12-13位数字
     NSString *formedUPC =[PrinterWraper addUPCLastVerifyCode:@"123456789101"];
     [PrinterWraper addPrintBarcode:formedUPC isTwoDimensionalCode:0];//1维码 upc 必须按upc规则生成 最后一位是校验位
@@ -95,6 +93,8 @@
     //打印code128 任意位数字母和数字
     [PrinterWraper addPrintBarcode:@"12345678901235678" isTwoDimensionalCode:-1];//1维码 code128
     
+    [PrinterWraper addPrintText:@"再添加一个表格\n"];
+     [PrinterWraper addItemLines:body2];
    
     [PrinterWraper moveToNextPage];//换页
 //    [PrinterWraper addPrintText:@"\n\n"];//打印文字

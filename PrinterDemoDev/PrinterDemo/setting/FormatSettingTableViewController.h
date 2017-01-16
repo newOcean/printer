@@ -10,10 +10,10 @@
 
 #import "PrinterSDK.h"
 
-#define  ITEMS_PRODUCT_KEY  @[@"styenum",@"name",@"code",@"extra1",@"extra2",@"spec",@"count",@"unit",@"price",@"xiaoji"]
+#define  ITEMS_PRODUCT_KEY  @[@"styenum",@"name",@"code",@"extra1",@"extra2",@"spec",@"count",@"oldprice",@"price",@"xiaoji"]
 
 
-#define  ITEMS_PRODUCT_VALUE  @[NSLocalizedString(@"款号", @""),NSLocalizedString(@"名称", @""),NSLocalizedString(@"条码", @""),@"xx",@"yy",NSLocalizedString(@"规格", @""),NSLocalizedString(@"数量", @""),NSLocalizedString(@"单位", @""),NSLocalizedString(@"价格", @""),NSLocalizedString(@"小计", @"")]
+#define  ITEMS_PRODUCT_VALUE  @[NSLocalizedString(@"款号", @""),NSLocalizedString(@"名称", @""),NSLocalizedString(@"条码", @""),[HjTools getlocalstring:0],[HjTools getlocalstring:1],NSLocalizedString(@"规格", @""),NSLocalizedString(@"数量", @""),NSLocalizedString(@"原价", @""),NSLocalizedString(@"价格", @""),NSLocalizedString(@"小计", @"")]
 
 
 @interface FormatSettingTableViewController : UITableViewController
