@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1046D771E333617006B7E21 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1046D761E333617006B7E21 /* logo.png */; };
 		E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */; };
 		E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */; };
 		E13FA8AE1C96F0D000BA03C9 /* libPrinterSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */; };
@@ -28,20 +29,9 @@
 		E1F479031BA7030B00702420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F479011BA7030B00702420 /* Main.storyboard */; };
 		E1F479051BA7030B00702420 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F479041BA7030B00702420 /* Images.xcassets */; };
 		E1F479081BA7030B00702420 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F479061BA7030B00702420 /* LaunchScreen.xib */; };
-		E1F479141BA7030B00702420 /* PrinterDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F479131BA7030B00702420 /* PrinterDemoTests.m */; };
 		E1F9ABCC1BA95779001BCB0D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */; };
 		E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F9ABCB1BA95779001BCB0D /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E1F4790E1BA7030B00702420 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1F478E91BA7030B00702420 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1F478F01BA7030B00702420;
-			remoteInfo = PrinterDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E1D7F4211BA9A92800461CD2 /* Embed Frameworks */ = {
@@ -57,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E1046D761E333617006B7E21 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPrinterDemoViewController.h; sourceTree = "<group>"; };
 		E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPrinterDemoViewController.m; sourceTree = "<group>"; };
 		E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJPrinterDemoViewController.xib; sourceTree = "<group>"; };
@@ -87,7 +78,6 @@
 		E1F479021BA7030B00702420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1F479041BA7030B00702420 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1F479071BA7030B00702420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E1F4790D1BA7030B00702420 /* PrinterDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrinterDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F479121BA7030B00702420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F479131BA7030B00702420 /* PrinterDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterDemoTests.m; sourceTree = "<group>"; };
 		E1F9ABC91BA95779001BCB0D /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -108,13 +98,6 @@
 				E13FA8B71C96F32000BA03C9 /* MobileCoreServices.framework in Frameworks */,
 				E13FA8B51C96F30300BA03C9 /* libxml2.tbd in Frameworks */,
 				E13FA8AE1C96F0D000BA03C9 /* libPrinterSDK.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1F4790A1BA7030B00702420 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				E1F478F11BA7030B00702420 /* PrinterDemo.app */,
-				E1F4790D1BA7030B00702420 /* PrinterDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +160,7 @@
 		E1F478F31BA7030B00702420 /* PrinterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E1046D761E333617006B7E21 /* logo.png */,
 				E1A9A27F1CD09056008C9E20 /* include */,
 				E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */,
 				E1AA88BC1C75CAE300FD3450 /* setting */,
@@ -256,24 +239,6 @@
 			productReference = E1F478F11BA7030B00702420 /* PrinterDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E1F4790C1BA7030B00702420 /* PrinterDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E1F4791A1BA7030B00702420 /* Build configuration list for PBXNativeTarget "PrinterDemoTests" */;
-			buildPhases = (
-				E1F479091BA7030B00702420 /* Sources */,
-				E1F4790A1BA7030B00702420 /* Frameworks */,
-				E1F4790B1BA7030B00702420 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E1F4790F1BA7030B00702420 /* PBXTargetDependency */,
-			);
-			name = PrinterDemoTests;
-			productName = PrinterDemoTests;
-			productReference = E1F4790D1BA7030B00702420 /* PrinterDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,11 +250,8 @@
 				TargetAttributes = {
 					E1F478F01BA7030B00702420 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = PS3T6HBA6H;
-					};
-					E1F4790C1BA7030B00702420 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = E1F478F01BA7030B00702420;
+						DevelopmentTeam = V7TXMFEX4X;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -307,7 +269,6 @@
 			projectRoot = "";
 			targets = (
 				E1F478F01BA7030B00702420 /* PrinterDemo */,
-				E1F4790C1BA7030B00702420 /* PrinterDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,15 +282,9 @@
 				E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */,
 				E1F479031BA7030B00702420 /* Main.storyboard in Resources */,
 				E1F479081BA7030B00702420 /* LaunchScreen.xib in Resources */,
+				E1046D771E333617006B7E21 /* logo.png in Resources */,
 				E1F479051BA7030B00702420 /* Images.xcassets in Resources */,
 				E1DC34F31C4920BA0089C3DF /* ico180.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1F4790B1BA7030B00702420 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,23 +307,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1F479091BA7030B00702420 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E1F479141BA7030B00702420 /* PrinterDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E1F4790F1BA7030B00702420 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1F478F01BA7030B00702420 /* PrinterDemo */;
-			targetProxy = E1F4790E1BA7030B00702420 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E1F479011BA7030B00702420 /* Main.storyboard */ = {
@@ -477,8 +416,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = PS3T6HBA6H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V7TXMFEX4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -492,10 +431,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PrinterDemo",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "744b85db-a759-4b6b-b5d4-0330072e4913";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: com.cmcc.*";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -504,7 +443,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile (Hangzhou) Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Mobile (Hangzhou) Information Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V7TXMFEX4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -518,43 +458,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PrinterDemo",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		E1F4791B1BA7030B00702420 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PrinterDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrinterDemo.app/PrinterDemo";
-			};
-			name = Debug;
-		};
-		E1F4791C1BA7030B00702420 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PrinterDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrinterDemo.app/PrinterDemo";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -575,15 +482,6 @@
 			buildConfigurations = (
 				E1F479181BA7030B00702420 /* Debug */,
 				E1F479191BA7030B00702420 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E1F4791A1BA7030B00702420 /* Build configuration list for PBXNativeTarget "PrinterDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E1F4791B1BA7030B00702420 /* Debug */,
-				E1F4791C1BA7030B00702420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

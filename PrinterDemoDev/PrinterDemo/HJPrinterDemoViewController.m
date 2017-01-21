@@ -66,10 +66,10 @@
     
 #if 1
 //    自己设置格式
-  //  NSString*photopath=[[NSBundle mainBundle] pathForResource:@"ico180" ofType:@"png"];
+    NSString*photopath=[[NSBundle mainBundle] pathForResource:@"logo" ofType:@"png"];
     
-    //打印logo
-    //    [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
+//    打印logo
+        [PrinterWraper addPrintImage:[UIImage imageWithContentsOfFile:photopath]];
 //    设置格式 大字体 行间距28 局中
      [PrinterWraper setPrintFormat:3 LineSpace:28 alinment:1 rotation:0];// 3 大字体  ，28默认行间距,1局中对齐
 
@@ -103,7 +103,7 @@
     BOOL res=   [PrinterWraper startPrint:self.navigationController deviceTag:0];
     if (!res) {
         PrinterListViewController *detail=[[PrinterListViewController alloc] init];
-        //        detail.taskmodel =model;
+                detail.hasTask =YES;
         [self.navigationController pushViewController:detail animated:YES];
         
         

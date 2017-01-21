@@ -8,7 +8,7 @@
 
 #import "ValueEditViewController.h"
 #import "FormatSettingTableViewController.h"
-#import "HJIOS7ScannerViewController.h"
+//#import "HJIOS7ScannerViewController.h"
 @interface ValueEditViewController ()
 {
     NSMutableDictionary *settingDictionary;
@@ -60,11 +60,11 @@
 }
 
 -(void)openScanner{
-    HJIOS7ScannerViewController *detail =[[HJIOS7ScannerViewController alloc] init];
-    detail.onScanResult =^(NSString*code){
-        textview.text=code;
-    };
-    [self presentViewController:detail animated:YES completion:nil];
+//    HJIOS7ScannerViewController *detail =[[HJIOS7ScannerViewController alloc] init];
+//    detail.onScanResult =^(NSString*code){
+//        textview.text=code;
+//    };
+//    [self presentViewController:detail animated:YES completion:nil];
 }
 
 -(void)rightbarPress{
