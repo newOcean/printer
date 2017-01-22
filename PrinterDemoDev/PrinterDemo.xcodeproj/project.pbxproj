@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1046D771E333617006B7E21 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1046D761E333617006B7E21 /* logo.png */; };
 		E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */; };
 		E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */; };
+		E118905A1E34CD5100C71521 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E11890591E34CD5100C71521 /* logo.png */; };
 		E13FA8AE1C96F0D000BA03C9 /* libPrinterSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */; };
 		E13FA8B51C96F30300BA03C9 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8B41C96F30300BA03C9 /* libxml2.tbd */; };
 		E13FA8B71C96F32000BA03C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13FA8B61C96F32000BA03C9 /* MobileCoreServices.framework */; };
@@ -47,10 +47,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E1046D761E333617006B7E21 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPrinterDemoViewController.h; sourceTree = "<group>"; };
 		E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPrinterDemoViewController.m; sourceTree = "<group>"; };
 		E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJPrinterDemoViewController.xib; sourceTree = "<group>"; };
+		E11890591E34CD5100C71521 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPrinterSDK.a; sourceTree = "<group>"; };
 		E13FA8B01C96F2B900BA03C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E13FA8B21C96F2F900BA03C9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -160,11 +160,11 @@
 		E1F478F31BA7030B00702420 /* PrinterDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E1046D761E333617006B7E21 /* logo.png */,
 				E1A9A27F1CD09056008C9E20 /* include */,
 				E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */,
 				E1AA88BC1C75CAE300FD3450 /* setting */,
 				E1DC34F21C4920BA0089C3DF /* ico180.png */,
+				E11890591E34CD5100C71521 /* logo.png */,
 				E1F9ABC81BA95779001BCB0D /* SVProgressHD */,
 				E1F478F81BA7030B00702420 /* AppDelegate.h */,
 				E1F478F91BA7030B00702420 /* AppDelegate.m */,
@@ -282,7 +282,7 @@
 				E105C9A71BA7C88100265142 /* HJPrinterDemoViewController.xib in Resources */,
 				E1F479031BA7030B00702420 /* Main.storyboard in Resources */,
 				E1F479081BA7030B00702420 /* LaunchScreen.xib in Resources */,
-				E1046D771E333617006B7E21 /* logo.png in Resources */,
+				E118905A1E34CD5100C71521 /* logo.png in Resources */,
 				E1F479051BA7030B00702420 /* Images.xcassets in Resources */,
 				E1DC34F31C4920BA0089C3DF /* ico180.png in Resources */,
 			);

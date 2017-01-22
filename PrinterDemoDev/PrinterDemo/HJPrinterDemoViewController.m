@@ -66,6 +66,9 @@
     
 #if 1
 //    自己设置格式
+    [PrinterWraper setPrintFormat:1 LineSpace:0 alinment:1 rotation:0];// 3 大字体  ，28默认行间距,1局中对齐
+
+    
     NSString*photopath=[[NSBundle mainBundle] pathForResource:@"logo" ofType:@"png"];
     
 //    打印logo
