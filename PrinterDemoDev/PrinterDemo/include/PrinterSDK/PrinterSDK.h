@@ -97,7 +97,7 @@
 
 +(void)connectPrinterTag:(NSInteger)tag uid:(NSString*)peripheraluid useCache:(BOOL)cache;
 +(void)disconnectPrinter:(NSString*)uid;
-
++(BOOL)disconnectLabelPrinter;
 //选择打印机
 //+(void)chooseNewPrinter:(UIViewController*)sender;
 //自动连接上一次使用的打印机
@@ -128,10 +128,13 @@
 +(void)cleanPrinterBuffer;
 //打印并清空前面添加的文字图片，如果返回NO则会缓存本次打印数据，nav用来push出打印机选择列表,
 +(BOOL)startPrint:(UINavigationController*)nav deviceTag:(NSInteger)tag;
+//打印标签，需要支持不干胶打印的机器
++(BOOL)startPrint:(UINavigationController *)nav deviceTag:(NSInteger)tag info:(NSDictionary*)info;
 +(void)addPrintData:(NSData *)data;//直接发送命令
 //定位到下一页
 +(void)moveToNextPage;
-
+//切纸 并且进纸N个点 不能自动切的无作用
++(void)cutPage:(int)n;
 @end
 
 
