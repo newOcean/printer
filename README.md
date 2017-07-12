@@ -4,12 +4,13 @@
 2.支持android webview  调用打印功能，请联系QQ153887715
 3.支持android 手机 ，请联系
 github下载地址https://github.com/newOcean/printer
+4.请使用作者淘宝的配套打印机网址http://shop113684150.taobao.com
 
 
 
 实现的功能：<br>
 1.如果发现适配问题（乱码，二维码不能打印等），请联系QQ153887715<br>
-3.sdk适配了市场上大多数打印机,咨询淘宝《掌上开单》网址http://shop113684150.taobao.com<br>
+3.sdk适配了市场上大多数打印机,咨询淘宝《手机进销存掌上开单》网址http://shop113684150.taobao.com<br>
 4.可打印文字，图片 ，二维码，一维码，格式化订单，打印速度快，自动重连，可以多手机同时打印。<br>
 
 Readme<br>
