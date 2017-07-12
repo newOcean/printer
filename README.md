@@ -1,10 +1,10 @@
 # 便携式蓝牙打印机iOS sdk，请看效果图，支持打印文字，图片，二维码，条码
 
 1.支持58mm 80mm 110mm 便携式蓝牙打印机，以及针式打印机，airprint苹果台式打印机，网络远程打印机，飞鹅云打印机。如果发现问题，请联系QQ或者微信153887715<br>
-2.支持android webview  调用打印功能，请联系QQ153887715
-3.支持android 手机 ，请联系
-github下载地址https://github.com/newOcean/printer
-4.请使用作者淘宝的配套打印机网址http://shop113684150.taobao.com
+2.支持android webview  调用打印功能，请联系QQ153887715<br>
+3.支持android 手机 ，请联系<br>
+github下载地址https://github.com/newOcean/printer<br>
+4.请使用作者淘宝的配套打印机网址http://shop113684150.taobao.com<br>
 
 
 
