@@ -25,7 +25,6 @@
 		E1F478F71BA7030B00702420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F61BA7030B00702420 /* main.m */; };
 		E1F478FA1BA7030B00702420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F91BA7030B00702420 /* AppDelegate.m */; };
 		E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F478FB1BA7030B00702420 /* PrinterDemo.xcdatamodeld */; };
-		E1F479001BA7030B00702420 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478FF1BA7030B00702420 /* ViewController.m */; };
 		E1F479031BA7030B00702420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F479011BA7030B00702420 /* Main.storyboard */; };
 		E1F479051BA7030B00702420 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F479041BA7030B00702420 /* Images.xcassets */; };
 		E1F479081BA7030B00702420 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F479061BA7030B00702420 /* LaunchScreen.xib */; };
@@ -73,8 +72,6 @@
 		E1F478F81BA7030B00702420 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1F478F91BA7030B00702420 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E1F478FC1BA7030B00702420 /* PrinterDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrinterDemo.xcdatamodel; sourceTree = "<group>"; };
-		E1F478FE1BA7030B00702420 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E1F478FF1BA7030B00702420 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E1F479021BA7030B00702420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1F479041BA7030B00702420 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1F479071BA7030B00702420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -171,8 +168,6 @@
 				E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */,
 				E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */,
 				E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */,
-				E1F478FE1BA7030B00702420 /* ViewController.h */,
-				E1F478FF1BA7030B00702420 /* ViewController.m */,
 				E1F479011BA7030B00702420 /* Main.storyboard */,
 				E1F479041BA7030B00702420 /* Images.xcassets */,
 				E1F479061BA7030B00702420 /* LaunchScreen.xib */,
@@ -250,8 +245,8 @@
 				TargetAttributes = {
 					E1F478F01BA7030B00702420 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = V7TXMFEX4X;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = PS3T6HBA6H;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -301,7 +296,6 @@
 				E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */,
 				E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */,
 				E1AA88C41C75CAE300FD3450 /* PrinterListViewController.m in Sources */,
-				E1F479001BA7030B00702420 /* ViewController.m in Sources */,
 				E1AA88C51C75CAE300FD3450 /* ValueEditViewController.m in Sources */,
 				E1F478F71BA7030B00702420 /* main.m in Sources */,
 			);
@@ -416,8 +410,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = V7TXMFEX4X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = PS3T6HBA6H;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,8 +427,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "744b85db-a759-4b6b-b5d4-0330072e4913";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: com.cmcc.*";
 			};
 			name = Debug;
 		};
@@ -443,8 +437,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile (Hangzhou) Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = V7TXMFEX4X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = PS3T6HBA6H;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,8 +454,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "744b85db-a759-4b6b-b5d4-0330072e4913";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: com.cmcc.*";
 			};
 			name = Release;
 		};

@@ -31,11 +31,12 @@
 -(void)updateBluetoothDevice:(NSMutableArray*)devices;
 -(void)didConnected:(NSString*)deviceUid Result:(BOOL)success;
 -(void)finishPrint;
-
+-(void)printResult:(NSInteger)code message:(NSString*)msg;
 @end
 
 //订单头尾内容
 @interface printModel : NSObject<NSCopying>
+@property (nonatomic,copy) UIImage *logo;//图标 最好是长方形 比如 320x80
 @property (nonatomic,copy) NSString *title;//标题 四季青精品店(销售单)
 @property (nonatomic,copy) NSString *headText;//页眉，
 
@@ -109,6 +110,8 @@
 
 //根据订单数据model打印，SDK负责排版,
 +(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printerTag:(NSInteger)tag preview:(BOOL)preview failed:(void (^)( BOOL res ))choose;
+//云打印
++(BOOL)cloudPrintModel:(printModel*)model printerSN:(NSString*)sn sender:(id)sender;
 //分行格式控制打印
 //fontSize 字体大小 0小字体,1中字体,2大，
 //lineSpace  :行间距 0～254 默认28  对应4毫米
@@ -117,7 +120,7 @@
 +(void)setPrintFormat:(int)printerfontsize LineSpace:(int)lineSpace alinment:(int)alin rotation:(int)rotation;
 +(void)addPrintText:(NSString*)text;
 +(void)addPrintImage:(UIImage*)img;
-+(void)addItemLines:(NSArray*)headervalue;//打印多行商品列表
++(NSString*)addItemLines:(NSArray*)headervalue;//打印多行商品列表
 
 //将12位的随机数字 加上最后一位校验码，返回13位的upc码，11位的输入则返回12位upc码
 +(NSString*)addUPCLastVerifyCode:(NSString*)basecode;

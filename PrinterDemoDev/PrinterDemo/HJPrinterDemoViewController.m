@@ -169,5 +169,20 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
+- (IBAction)cloudprinter:(id)sender {
+//        偷懒的做法
+        printModel *model =[[printModel alloc] init];
+        model.title =@"掌上科技有限公司";
+        model.headText =@"日期：2016-1-2   开单员：小三";
+//        model.headerMultiValues =body;
+    
+        model.footText =@"总计  xxx元";
+        model.barcode =@"www.baidu.com";
+        model.advise =@"联系QQ40255986 手机15988879319";
+    
+    
+    //sn需要购买打印机后才会有，需要先注册，如有需要请联系qq153887715
+    [PrinterWraper cloudPrintModel:model printerSN:@"xxxxx" sender:self];
+}
 
 @end
