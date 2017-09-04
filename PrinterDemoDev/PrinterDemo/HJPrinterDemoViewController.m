@@ -29,7 +29,7 @@
 //    [newsetting setObject:@1 forKey:@"showconfigure"];//sdk自带打印机配置
 
 //    [PrinterWraper setPrinterSetting:newsetting];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(LabelPrinter:) name:@"kNewLabelPrinterConnected" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printThead:) name:@"kNewLabelPrinterConnected" object:nil];
 
 }
 
@@ -184,6 +184,10 @@
     //sn需要购买打印机后才会有，需要先注册，如有需要请联系qq153887715
     [PrinterWraper cloudPrintModel:model printerSN:@"xxxxx" sender:self];
 }
+-(void)printThead:(id)sender
+{
+    [self performSelector:@selector(LabelPrinter:) withObject:sender afterDelay:0.5];
+}
 - (IBAction)LabelPrinter:(id)sender {
     
     NSMutableDictionary *info =[NSMutableDictionary new];
@@ -202,22 +206,23 @@
     
     LabelModel *priceLabel = [[LabelModel alloc] init];
     priceLabel.x =@30;
-    priceLabel.y =@50;
+    priceLabel.y =@70;
     priceLabel.xscale=@1;
     priceLabel.yscale=@1;
     priceLabel.text =@"会员价 1260.00元";
     [contentlist addObject:priceLabel];
     
     LabelModel *barcode = [[LabelModel alloc] init];
-    barcode.x =@30;
-    barcode.y =@90;
+    barcode.x =@8;
+    barcode.y =@110;
     barcode.xscale=@1;
     barcode.yscale=@2;
     barcode.barcodeHeight =@60;
     barcode.isBarcode =@YES;
-    barcode.text =@"1234567890123";
+    barcode.text =[PrinterWraper addUPCLastVerifyCode: @"123456789012"];
     [contentlist addObject:barcode];
     
+    [info setObject:contentlist forKey:@"contentlist"];
     [PrinterWraper startPrintLabel:self.navigationController content:info];
 }
 
