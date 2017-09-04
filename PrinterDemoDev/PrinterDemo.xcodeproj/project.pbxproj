@@ -49,6 +49,7 @@
 		E105C9A31BA7C88100265142 /* HJPrinterDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJPrinterDemoViewController.h; sourceTree = "<group>"; };
 		E105C9A41BA7C88100265142 /* HJPrinterDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJPrinterDemoViewController.m; sourceTree = "<group>"; };
 		E105C9A51BA7C88100265142 /* HJPrinterDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJPrinterDemoViewController.xib; sourceTree = "<group>"; };
+		E107AC511F5D275C00A3E613 /* PrinterSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterSDK.h; sourceTree = "<group>"; };
 		E11890591E34CD5100C71521 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPrinterSDK.a; sourceTree = "<group>"; };
 		E13FA8B01C96F2B900BA03C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -58,7 +59,6 @@
 		E13FA8B81C96F33600BA03C9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E13FA8BC1C96F36300BA03C9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E16EFD5A1CEB1102007C4FB8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		E1A9A2811CD09056008C9E20 /* PrinterSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterSDK.h; sourceTree = "<group>"; };
 		E1AA88BD1C75CAE300FD3450 /* FormatSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatSettingTableViewController.h; sourceTree = "<group>"; };
 		E1AA88BE1C75CAE300FD3450 /* FormatSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatSettingTableViewController.m; sourceTree = "<group>"; };
 		E1AA88BF1C75CAE300FD3450 /* PrinterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterListViewController.h; sourceTree = "<group>"; };
@@ -101,22 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E1A9A27F1CD09056008C9E20 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				E1A9A2801CD09056008C9E20 /* PrinterSDK */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		E1A9A2801CD09056008C9E20 /* PrinterSDK */ = {
-			isa = PBXGroup;
-			children = (
-				E1A9A2811CD09056008C9E20 /* PrinterSDK.h */,
-			);
-			path = PrinterSDK;
-			sourceTree = "<group>";
-		};
 		E1AA88BC1C75CAE300FD3450 /* setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +141,7 @@
 		E1F478F31BA7030B00702420 /* PrinterDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E1A9A27F1CD09056008C9E20 /* include */,
+				E107AC511F5D275C00A3E613 /* PrinterSDK.h */,
 				E13FA8AD1C96F0D000BA03C9 /* libPrinterSDK.a */,
 				E1AA88BC1C75CAE300FD3450 /* setting */,
 				E1DC34F21C4920BA0089C3DF /* ico180.png */,

@@ -184,5 +184,41 @@
     //sn需要购买打印机后才会有，需要先注册，如有需要请联系qq153887715
     [PrinterWraper cloudPrintModel:model printerSN:@"xxxxx" sender:self];
 }
+- (IBAction)LabelPrinter:(id)sender {
+    
+    NSMutableDictionary *info =[NSMutableDictionary new];
+    
+    [info setObject:@40 forKey:@"labelwidth"];
+    [info setObject:@30 forKey:@"labelheight"];
+    [info setObject:@NO forKey:@"endcut"];
+    NSMutableArray *contentlist =[[NSMutableArray alloc] init];
+    LabelModel *nameLabel = [[LabelModel alloc] init];
+    nameLabel.x =@30;
+    nameLabel.y =@10;
+    nameLabel.xscale=@1;
+    nameLabel.yscale=@2;
+    nameLabel.text =@"掌上科技打印机";
+    [contentlist addObject:nameLabel];
+    
+    LabelModel *priceLabel = [[LabelModel alloc] init];
+    priceLabel.x =@30;
+    priceLabel.y =@50;
+    priceLabel.xscale=@1;
+    priceLabel.yscale=@1;
+    priceLabel.text =@"会员价 1260.00元";
+    [contentlist addObject:priceLabel];
+    
+    LabelModel *barcode = [[LabelModel alloc] init];
+    barcode.x =@30;
+    barcode.y =@90;
+    barcode.xscale=@1;
+    barcode.yscale=@2;
+    barcode.barcodeHeight =@60;
+    barcode.isBarcode =@YES;
+    barcode.text =@"1234567890123";
+    [contentlist addObject:priceLabel];
+    
+    [PrinterWraper startPrintLabel:self.navigationController content:info];
+}
 
 @end
