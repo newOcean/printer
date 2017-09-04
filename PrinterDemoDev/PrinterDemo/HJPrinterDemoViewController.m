@@ -216,7 +216,7 @@
     barcode.barcodeHeight =@60;
     barcode.isBarcode =@YES;
     barcode.text =@"1234567890123";
-    [contentlist addObject:priceLabel];
+    [contentlist addObject:barcode];
     
     [PrinterWraper startPrintLabel:self.navigationController content:info];
 }
