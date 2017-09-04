@@ -29,7 +29,7 @@
 //    [newsetting setObject:@1 forKey:@"showconfigure"];//sdk自带打印机配置
 
 //    [PrinterWraper setPrinterSetting:newsetting];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(LabelPrinter:) name:@"kNewLabelPrinterConnected" object:nil];
 
 }
 

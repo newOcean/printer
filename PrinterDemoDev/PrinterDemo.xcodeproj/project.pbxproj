@@ -229,8 +229,13 @@
 				TargetAttributes = {
 					E1F478F01BA7030B00702420 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = PS3T6HBA6H;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = V7TXMFEX4X;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -394,8 +399,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = PS3T6HBA6H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V7TXMFEX4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,8 +416,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "744b85db-a759-4b6b-b5d4-0330072e4913";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: com.cmcc.*";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -421,8 +426,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile (Hangzhou) Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = PS3T6HBA6H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V7TXMFEX4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,8 +443,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "744b85db-a759-4b6b-b5d4-0330072e4913";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: com.cmcc.*";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
