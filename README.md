@@ -5,6 +5,7 @@
 3.支持android 手机 ，请联系<br>
 github下载地址https://github.com/newOcean/printer<br>
 4.请使用作者淘宝的配套打印机网址http://shop113684150.taobao.com<br>
+5.非适配打印机可能会延迟5秒钟才能打印！！！！
 
 
 
