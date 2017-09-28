@@ -9,7 +9,7 @@
  2.使用此sdk表示同意只使用我们代理的打印机（物美价廉^-^）,咨询淘宝购买网址http://shop113684150.taobao.com
  3.实现功能，订单打印，二维码打印（部分打印机），多手机同时打印（部分打印机），打印速度快，自动重连
  4.无法打印的打印机，多半是因为打印机品牌太小，没有适配，请到我们淘宝购买。
-*/
+ */
 
 
 
@@ -60,7 +60,7 @@
 //@property int odertype;//0销售单 1采购单 2批发单 如果写了标题就不需要
 @property BOOL isLabel;//打印标签，打印productList中所有商品的标签,name,color,size,barcode_1,price
 //@property BOOL composedSummary;//数量 价格 小记 是否合到一起（数量/单价/小记）
-@property (nonatomic,copy) NSString *cloudPrinterSN;//云打印机sn 
+@property (nonatomic,copy) NSString *cloudPrinterSN;//云打印机sn
 @end
 
 
@@ -68,15 +68,19 @@
 @interface LabelModel : NSObject<NSCopying>
 @property (nonatomic,copy) NSNumber *x; //x坐标，所有尺度都以mm为单位
 @property (nonatomic,copy) NSNumber *y;//x坐标
+@property (nonatomic,copy) NSNumber *Rotation;//Rotation
 
-@property (nonatomic,copy) NSNumber *xscale;//x方向拉伸字体，barcode模式下为白条宽
-@property (nonatomic,copy) NSNumber *yscale;//y方向拉伸字体，barcode模式下为黑条宽
 
-@property (nonatomic,copy) NSNumber *isBarcode;//是否条码
-@property (nonatomic,copy) NSNumber *barcodeHeight;//条码的高度，宽度无需指定
+@property (nonatomic,copy) NSNumber *xscale;//x方向拉伸字体，barcode模式下为白条宽,line 宽
+@property (nonatomic,copy) NSNumber *yscale;//y方向拉伸字体，barcode模式下为黑条宽，line 高
 
-@property (nonatomic,copy) NSNumber *isQRCode;//是否二维码
-@property (nonatomic,copy) NSNumber *QRCodeWidth;//二维码的宽度，高度和宽度一致
+//@property (nonatomic,copy) NSNumber *isBarcode;//是否条码
+@property (nonatomic,copy) NSNumber *height;//条码的高度，宽度无需指定
+
+//@property (nonatomic,copy) NSNumber *isQRCode;//是否二维码
+@property (nonatomic,copy) NSNumber *width;//二维码的宽度，高度和宽度一致
+
+@property (nonatomic,copy) NSNumber *type;//0 text,1 barcode,2qrcode,3 line
 @property (nonatomic,copy) NSString *text;//文字或者条码或者二维码
 
 @end
@@ -84,28 +88,28 @@
 @interface PrinterWraper : NSObject
 /* 打印设置的默认值，可以修改，或者获取此值，对应于打印模版设置的内容
  @"lineSpace"  :@28    0～254 默认28  对应4毫米
-  @{@"printertype":@0,// 打印机宽度  0 58mm,1 80mm,2 110mm,3,A4 针式打印机蓝牙适配器,3 airprint A4（台式无线打印机）
-@"printerfontsize":@0,//字体大小 0自动, 1小，2中，3大,
-@"copycount":@0,//0 1联，1 2联 ，2 3联
-@"autoprint":@0,//0 不自动打印  1自动打印
-@"company":NSLocalizedString(@"公司名称", @""),//公司名称 第一行自动居中 大字体，可多行
-@"operater":NSLocalizedString(@"店小二", @""),//开单员
-@"welcome":NSLocalizedString(@"谢谢惠顾", @""),//页脚，可多行
-@"barcode":@"",//二维码的链接地址
-
-@"name":@YES,//名称
-@"code":@NO,//商品条码编号
-@"styenum":@YES,//款号 货号
-@"color":@YES,//颜色
-@"spec":@NO,//规格
-@"count":@YES,//数量
-@"unit":@YES,//单位
-@"price":@YES,//价格
-@"xiaoji":@YES,//小记
-@"comment":@YES,//订单备注
-
+ @{@"printertype":@0,// 打印机宽度  0 58mm,1 80mm,2 110mm,3,A4 针式打印机蓝牙适配器,3 airprint A4（台式无线打印机）
+ @"printerfontsize":@0,//字体大小 0自动, 1小，2中，3大,
+ @"copycount":@0,//0 1联，1 2联 ，2 3联
+ @"autoprint":@0,//0 不自动打印  1自动打印
+ @"company":NSLocalizedString(@"公司名称", @""),//公司名称 第一行自动居中 大字体，可多行
+ @"operater":NSLocalizedString(@"店小二", @""),//开单员
+ @"welcome":NSLocalizedString(@"谢谢惠顾", @""),//页脚，可多行
+ @"barcode":@"",//二维码的链接地址
+ 
+ @"name":@YES,//名称
+ @"code":@NO,//商品条码编号
+ @"styenum":@YES,//款号 货号
+ @"color":@YES,//颜色
+ @"spec":@NO,//规格
+ @"count":@YES,//数量
+ @"unit":@YES,//单位
+ @"price":@YES,//价格
+ @"xiaoji":@YES,//小记
+ @"comment":@YES,//订单备注
+ 
  @"keepAlive":@1 //0打印后断开以让其他手机连接，1自动决定，2打印后继续连接（下次打印速度快）
-};
+ };
  */
 +(NSDictionary*)getPrinterSetting;
 +(void)setPrinterSetting:(NSDictionary*)dic;
@@ -140,7 +144,7 @@
 
 /**
  标签打印机
-
+ 
  @param nav 为了方便弹出打印机界面
  @param info，打印内容和控制信息
  NSNumber* labelwidth =info[@"labelwidth"];

@@ -201,6 +201,7 @@
     nameLabel.y =@10;
     nameLabel.xscale=@1;
     nameLabel.yscale=@2;
+    nameLabel.Rotation =@90;
     nameLabel.text =@"掌上科技打印机";
     [contentlist addObject:nameLabel];
     
@@ -217,8 +218,8 @@
     barcode.y =@110;
     barcode.xscale=@1;
     barcode.yscale=@2;
-    barcode.barcodeHeight =@60;
-    barcode.isBarcode =@YES;
+    barcode.height =@60;
+    barcode.type =@1;
     barcode.text =[PrinterWraper addUPCLastVerifyCode: @"123456789012"];
     [contentlist addObject:barcode];
     
