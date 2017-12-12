@@ -61,6 +61,7 @@
     NSArray *values1 =@[@"0",@"杜蕾斯丝袜",@"100",@"1",@"100.0"];
     NSArray *values2 =@[@"0",@"大白菜",@"1",@"10",@"10.0"];
     NSArray* body =@[headers,values0,values1,values2];
+ 
     
     NSArray* body2 =@[@[@"oo",@"xx"],@[@"xx",@"00"]];
     
@@ -192,8 +193,8 @@
     
     NSMutableDictionary *info =[NSMutableDictionary new];
     
-    [info setObject:@40 forKey:@"labelwidth"];
-    [info setObject:@30 forKey:@"labelheight"];
+    [info setObject:@80 forKey:@"labelwidth"];
+    [info setObject:@100 forKey:@"labelheight"];
     [info setObject:@NO forKey:@"endcut"];
     NSMutableArray *contentlist =[[NSMutableArray alloc] init];
     LabelModel *nameLabel = [[LabelModel alloc] init];
@@ -205,13 +206,7 @@
     nameLabel.text =@"掌上科技打印机";
     [contentlist addObject:nameLabel];
     
-    LabelModel *priceLabel = [[LabelModel alloc] init];
-    priceLabel.x =@30;
-    priceLabel.y =@70;
-    priceLabel.xscale=@1;
-    priceLabel.yscale=@1;
-    priceLabel.text =@"会员价 1260.00元";
-    [contentlist addObject:priceLabel];
+
     
     LabelModel *barcode = [[LabelModel alloc] init];
     barcode.x =@8;
@@ -223,7 +218,20 @@
     barcode.text =[PrinterWraper addUPCLastVerifyCode: @"123456789012"];
     [contentlist addObject:barcode];
     
+    LabelModel *qrcode = [[LabelModel alloc] init];
+    qrcode.x =@30;
+    qrcode.y =@200;
+    qrcode.Rotation=@0;
+    
+    qrcode.type=@2;
+    qrcode.width=@60;
+    qrcode.text =@"www.baidu.com";
+    [contentlist addObject:qrcode];
+    
     [info setObject:contentlist forKey:@"contentlist"];
+    
+    
+    
     [PrinterWraper startPrintLabel:self.navigationController content:info];
 }
 
