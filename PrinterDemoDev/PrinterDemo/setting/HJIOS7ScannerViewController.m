@@ -51,7 +51,7 @@
     _line.image = [UIImage imageNamed:@"line.png"];
     [self.view addSubview:_line];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
+//    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
     
     
     
@@ -79,7 +79,7 @@
 {
     
     [self dismissViewControllerAnimated:YES completion:^{
-        [timer invalidate];
+//        [timer invalidate];
     }];
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -96,7 +96,7 @@
     // Input
     _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
     if (!_input) {
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"没有检测到相机，请在手机设置中打开掌上开单联网宝的相机权限",@"") delegate:self cancelButtonTitle:NSLocalizedString(@"确认", @"") otherButtonTitles:nil, nil];
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"没有检测到相机，请在手机设置中打开应用的相机权限",@"") delegate:self cancelButtonTitle:NSLocalizedString(@"确认", @"") otherButtonTitles:nil, nil];
         [alert show];
        
 
@@ -141,7 +141,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 {
     [self dismissViewControllerAnimated:YES completion:^{
-        [timer invalidate];
+//        [timer invalidate];
     }];
 }
 #pragma mark AVCaptureMetadataOutputObjectsDelegate
@@ -159,16 +159,23 @@
     {
         self.onScanResult(stringValue);
     }
+    //继续扫描 todo
+    if (self.keeprunning) {
+         [_session stopRunning];
+        [self performSelector:@selector(startScan) withObject:nil afterDelay:3];
+
+        return;
+    }
     [_session stopRunning];
     [self dismissViewControllerAnimated:YES completion:^
      {
-         [timer invalidate];
+//         [timer invalidate];
          NSLog(@"扫描结果%@",stringValue);
-         if ([self.delegate respondsToSelector:@selector(callbackCallback:)]) {
-             [self.delegate callbackCallback:stringValue];
-         }else
-            [[NSNotificationCenter defaultCenter] postNotificationName:scannerNotification object:stringValue];
+
                }];
+}
+-(void)startScan{
+    [_session startRunning];
 }
 
 - (void)didReceiveMemoryWarning

@@ -32,15 +32,15 @@
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
     
-    NSDictionary*configure=[PrinterWraper getPrinterSetting];
+    NSDictionary*configure=[PrinterSDK getPrinterSetting];
     NSMutableDictionary *newdic =[NSMutableDictionary dictionaryWithDictionary:configure];
     
     [newdic setObject:@1 forKey:@"keepAlive"];//0 打完后断开,1 打完后自动决定,2打完后继续连接
-    [PrinterWraper setPrinterSetting:newdic];
+    [PrinterSDK setPrinterSetting:newdic];
 
 //    [SVProgressHUD showWithStatus:@"正在自动连接打印机"];
 //    
-//    [PrinterWraper autoConnectLastPrinterTimeout:10 Completion:^(NSString *uid) {
+//    [PrinterSDK autoConnectLastPrinterTimeout:10 Completion:^(NSString *uid) {
 //        NSLog(@"自动连接 uid=%@",uid);
 //        if (uid) {
 //            [SVProgressHUD showSuccessWithStatus:@"自动连接成功"];

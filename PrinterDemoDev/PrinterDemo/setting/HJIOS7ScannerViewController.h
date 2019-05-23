@@ -8,19 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@protocol scanerDelegate <NSObject>
-
--(void)callbackCallback:(NSString*)comment;
-
-@end
 
 @interface HJIOS7ScannerViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
 {
     int num;
     BOOL upOrdown;
-    NSTimer * timer;
+//    NSTimer * timer;
 }
 @property (nonatomic, copy) void (^onScanResult)(NSString*code);
+@property (nonatomic,assign) BOOL keeprunning;
 
 @property (strong,nonatomic)AVCaptureDevice * device;
 @property (strong,nonatomic)AVCaptureDeviceInput * input;
@@ -29,4 +25,5 @@
 @property (strong,nonatomic)AVCaptureVideoPreviewLayer * preview;
 @property (nonatomic, retain) UIImageView * line;
 @property (nonatomic,assign) id delegate;
+
 @end
