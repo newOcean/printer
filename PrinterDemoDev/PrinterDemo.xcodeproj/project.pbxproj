@@ -444,7 +444,7 @@
 					"$(PROJECT_DIR)/PrinterDemo/PrinterSDK/LabelPrinter",
 					"$(PROJECT_DIR)/PrinterDemo/PrinterSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doulai.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -475,7 +475,7 @@
 					"$(PROJECT_DIR)/PrinterDemo/PrinterSDK/LabelPrinter",
 					"$(PROJECT_DIR)/PrinterDemo/PrinterSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cmcc.educationprinterUS22;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doulai.educationprinterUS22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
