@@ -21,6 +21,9 @@
 //绑定的标签打印机
 #define keydefaultlabelprintername @"keydefaultlabelprintername"
 
+#define kNextLineFalseFlag @"kNextLineFalseFlag"
+#define kNoDefaultPrinter @"kNoDefaultPrinter"
+
 //打印机delegate
 @protocol BluetoothDelegate <NSObject>
 @optional
@@ -40,7 +43,7 @@
 @property (nonatomic,copy) NSString *headText;//页眉
 
 //订单里购买的商品列表
-@property (nonatomic,strong) NSNumber *headerMultiValuesType;//主体内容的类型，0 order,1sumary
+//@property (nonatomic,strong) NSNumber *headerMultiValuesType;//主体内容的类型，0 order,1sumary
 @property (nonatomic,strong) NSArray *headerMultiValues;//购买的商品列表
 @property (nonatomic,copy) NSString *bodyText;//自定义的商品列表内容
 @property (nonatomic,copy) NSString *sumaryText;//总计 大字体打印
@@ -118,7 +121,8 @@
 +(void)setInitformat;
 #pragma mark 模版打印接口
 //根据订单数据model打印，SDK负责排版,
-+(BOOL)printModel:(printModel*)model fromviewc:(UIViewController*)sender  printerTag:(NSInteger)tag preview:(BOOL)preview failed:(void (^)( BOOL res ))onfailed;
++(BOOL)printModel:(printModel*)model   printerTag:(NSInteger)pTag  failed:(void (^)( BOOL res ))onfailed
+;
 
 //云打印机
 +(BOOL)cloudPrintModel:(printModel*)model printerSN:(NSString*)sn sender:(id)sender;
@@ -133,7 +137,15 @@
 +(void)setPrintFormat:(int)printerfontsize LineSpace:(int)lineSpace alinment:(int)alin rotation:(int)rotation;
 +(void)addPrintText:(NSString*)text;
 +(void)addPrintImage:(UIImage*)img;
-+(NSString*)addItemLines:(NSArray*)lines type:(NSNumber*)type;//打印多行商品列表0,order,1 suamry
+//+(NSString*)addItemLines:(NSArray*)lines type:(NSNumber*)type;//打印多行商品列表0,order,1 suamry
+//打印表格列表，第一行为宽度，第二行开始为数据,自动对齐，自动添加表格
+//@[
+//@[@"6",@"4",@"2",@"2",@"1"],//每一列的最大字符长度,最后一个数字表示是否添加下划线
+//@[@"名称",@"规格",@"数量",@"价格",@"1"],
+//@[@"土豆炖牛肉",@"小份",@"2",@"50",@"1"]
+//@[@"裤子",@"白色",@"1",@"500",@"1"]
+//]
++(NSString*)addTableList:(NSArray*)lines needFrame:(BOOL)needFrame;
 +(void)addPrintData:(NSData *)data;//直接发送命令
 //二维码或者一维码 text必须是英文字符 ，istwo＝NO 打印一维码，text必须是12-13位数字
 +(void)addPrintBarcode:(NSString*)text isTwoDimensionalCode :(int)isTwo;
@@ -163,9 +175,11 @@
 +(void)nextPage;
 +(void)setpageLen:(int)n;
 +(NSInteger)getPrinterMaxWidth;//当前打印机和当前字体下支持的行最大字符数
-+(NSString*)getSplitLine;//当前打印机的分割线
++(NSString*)getSplitLine;//当前打印机的分割线，虚线
++(NSString*)getSplitLine:(int)type;//表格类型的分割线，实线
 +(int)getStringByteLen:(NSString*)str;//字符串在打印机中占的长度
 +(NSString*)addVerifyNumberForBarcode:(NSString*)basecode;//12位的一维码加上校验码，否则部分打印机可能打印错误
++(NSString*)creatHtml:(printModel*)model;
 @end
 
 

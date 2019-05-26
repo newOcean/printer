@@ -239,7 +239,7 @@
             [self.navigationController popViewControllerAnimated:YES];
         }else if(self.taskmodel)
         {
-            [PrinterSDK printModel:self.taskmodel fromviewc:nil printerTag:self.printerTag preview:NO failed:nil];
+            [PrinterSDK printModel:self.taskmodel  printerTag:self.printerTag  failed:nil];
             self.taskmodel=nil;
             [self.navigationController popViewControllerAnimated:YES];
         }

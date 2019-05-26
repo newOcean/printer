@@ -23,6 +23,7 @@
 		E1AA88C41C75CAE300FD3450 /* PrinterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88C01C75CAE300FD3450 /* PrinterListViewController.m */; };
 		E1AA88C51C75CAE300FD3450 /* ValueEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AA88C21C75CAE300FD3450 /* ValueEditViewController.m */; };
 		E1DC34F31C4920BA0089C3DF /* ico180.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC34F21C4920BA0089C3DF /* ico180.png */; };
+		E1E9FC1A229974B90081FD9B /* PrintPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E9FC19229974B90081FD9B /* PrintPreviewViewController.m */; };
 		E1F478F71BA7030B00702420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F61BA7030B00702420 /* main.m */; };
 		E1F478FA1BA7030B00702420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F478F91BA7030B00702420 /* AppDelegate.m */; };
 		E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F478FB1BA7030B00702420 /* PrinterDemo.xcdatamodeld */; };
@@ -68,6 +69,8 @@
 		E1AA88C11C75CAE300FD3450 /* ValueEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueEditViewController.h; sourceTree = "<group>"; };
 		E1AA88C21C75CAE300FD3450 /* ValueEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueEditViewController.m; sourceTree = "<group>"; };
 		E1DC34F21C4920BA0089C3DF /* ico180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico180.png; sourceTree = "<group>"; };
+		E1E9FC18229974B90081FD9B /* PrintPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintPreviewViewController.h; sourceTree = "<group>"; };
+		E1E9FC19229974B90081FD9B /* PrintPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintPreviewViewController.m; sourceTree = "<group>"; };
 		E1F478F11BA7030B00702420 /* PrinterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F478F51BA7030B00702420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F478F61BA7030B00702420 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 		E1AA88BC1C75CAE300FD3450 /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				E1E9FC18229974B90081FD9B /* PrintPreviewViewController.h */,
+				E1E9FC19229974B90081FD9B /* PrintPreviewViewController.m */,
 				E1AA88BD1C75CAE300FD3450 /* FormatSettingTableViewController.h */,
 				E1AA88BE1C75CAE300FD3450 /* FormatSettingTableViewController.m */,
 				E1AA88BF1C75CAE300FD3450 /* PrinterListViewController.h */,
@@ -303,6 +308,7 @@
 				E105C9A61BA7C88100265142 /* HJPrinterDemoViewController.m in Sources */,
 				E1F478FA1BA7030B00702420 /* AppDelegate.m in Sources */,
 				E1F9ABCD1BA95779001BCB0D /* SVProgressHUD.m in Sources */,
+				E1E9FC1A229974B90081FD9B /* PrintPreviewViewController.m in Sources */,
 				E1F478FD1BA7030B00702420 /* PrinterDemo.xcdatamodeld in Sources */,
 				E1AA88C41C75CAE300FD3450 /* PrinterListViewController.m in Sources */,
 				E1AA88C51C75CAE300FD3450 /* ValueEditViewController.m in Sources */,
